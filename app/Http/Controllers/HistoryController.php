@@ -14,18 +14,23 @@ class HistoryController extends Controller
     }
   
     public function index() {
-      $order = Order::where('user_id', Auth::user() ->id)
+      $orders = Order::where('user_id', Auth::user() ->id)
       ->where('status', '!=', 0) ->get();
+     
+     $total_item = [];
+     foreach ($orders as $order) {
+      $count = Detail_order::where('order_id', $order ->id) -> sum('quantity');
       
-      $orders = Detail_order::where('order_id', $order ->id) ->get();
-      $total_item =  Detail_order::where('order_id', $order ->id) ->count();
-      
-      return view('history', compact('orders', 'total_item'));
+      array_push($total_item, $count);
+     }
+     
+      return view('history/index', compact('orders', 'total_item'));
     }
     
     public function details($id){
-      $order = Detail_order::where('id', $id) ->first();
-      
-      return view('history/detail', compact('order'));
+      $orders = Detail_order::where('order_id', $id) ->get();
+    
+      $status = Order::where('id', $id) ->first() ->status;
+      return view('history/detail', compact('orders', 'status'));
     }
 }

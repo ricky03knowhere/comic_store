@@ -49,11 +49,11 @@ class OrdersController extends Controller
     $user_id = Auth::user() ->id;
 
     if (($request ->quantity > $book ->stock)) {
-      alert()-> warning('Your order is out of stock', 'Warning');
+      alert()-> warning('Warning', 'Your order is out of stock');
       return redirect('order/'.$id);
     } else if ($request -> quantity == 0) {
 
-      alert()-> warning('The order cannot be null ', 'Warning');
+      alert()-> warning('Warning', 'The order cannot be null ');
       return redirect('order/'.$id);
     }
 
@@ -102,7 +102,7 @@ class OrdersController extends Controller
 
       //Current Price
       $new_detail_order_price = $book -> price * $request -> quantity;
-      $detail_order -> total_price = $detail_order -> total_price * $new_detail_order_price;
+      $detail_order -> total_price += $new_detail_order_price;
 
       $detail_order ->update();
     }
@@ -115,7 +115,7 @@ class OrdersController extends Controller
     $order -> total_price += $book -> price * $request -> quantity;
     $order ->update();
 
-    alert()-> success('Order is successfully added to cart', 'Success');
+    alert()-> success('Success', 'Order is successfully added to cart');
     return redirect('checkout');
   }
 
@@ -174,7 +174,7 @@ class OrdersController extends Controller
       $book ->update();
     }
 
-alert() ->success('Orders have been confirmed, please complete the payment... ', 'Success');
+alert() ->success('Success', 'Orders have been confirmed, please complete the payment... ');
   return redirect('history');
   }
 
@@ -195,7 +195,7 @@ alert() ->success('Orders have been confirmed, please complete the payment... ',
     $order ->update();
     $detail_order ->delete();
     
-    alert() ->success('Order has been removed', 'Susscess');
+    alert() ->toast('Order has been removed', 'success');
 
     return redirect('checkout');
   }

@@ -30,15 +30,20 @@
           <tr>
             <td>{{ $i++ }}</td>
             <td>{{ $order -> date }}</td>
-            <td>{{ $total_items }}</td>
+            <td>{{ $total_item[($i-2)] }}</td>
             <td>Rp. {{ number_format($order -> total_price) }}</td>
             <th>
               @if($order ->status == 1)
-                {{ Paid }}
+                {{ "Paid" }}
               @else
-                {{ Unpaid }}
+                {{ "Unpaid" }}
               @endif
             </th>
+            <td>
+              <a href="{{ url('history', [$order ->id]) }}" class="btn btn-primary">
+                <i class="fas fa-info-circle"></i> Details
+              </a>
+            </td>
           </tr>
           @endforeach
         </tbody>
