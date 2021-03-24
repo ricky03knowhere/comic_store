@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '07055ec36d17c822f8dd98f5a32a0fe89140b100',
+    'reference' => 'e3fa76f648c8e0f66bc2b9a89a872f3a0953923e',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -453,6 +453,15 @@ private static $installed = array (
         0 => '*',
       ),
     ),
+    'laravel-frontend-presets/argon' => 
+    array (
+      'pretty_version' => 'v1.1.1',
+      'version' => '1.1.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '62b3cb7516a605634416ceb386c6f2b467bc5f45',
+    ),
     'laravel/framework' => 
     array (
       'pretty_version' => 'v8.32.1',
@@ -469,7 +478,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '07055ec36d17c822f8dd98f5a32a0fe89140b100',
+      'reference' => 'e3fa76f648c8e0f66bc2b9a89a872f3a0953923e',
+    ),
+    'laravel/legacy-factories' => 
+    array (
+      'pretty_version' => 'v1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5e3fe2fd5fda64e20ea5c74c831a7346294e902a',
     ),
     'laravel/sail' => 
     array (
