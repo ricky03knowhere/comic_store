@@ -21,6 +21,9 @@
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
+      
+      <!--Custom CSS-->
+        <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet">
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -34,7 +37,6 @@
             @include('layouts.navbars.navbar')
             @yield('content')
         </div>
-
         @guest()
             @include('layouts.footers.guest')
         @endguest

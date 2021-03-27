@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <p class="mt-3 mb-0 text-muted text-sm">
-                                <span class="text-primary mr-2">Rp 10.303 ,-</span>
+                                <span class="text-success mr-2">Rp 10.303 ,-</span>
                                 <span class="text-nowrap">Checkout now...</span>
                             </p>
                         </div>
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <p class="mt-3 mb-0 text-muted text-sm">
-                                <span class="text-primary mr-2"> Rp 120.292</span>
+                                <span class="text-success mr-2"> Rp 120.292</span>
                                 <span class="text-nowrap">Since last week</span>
                             </p>
                         </div>

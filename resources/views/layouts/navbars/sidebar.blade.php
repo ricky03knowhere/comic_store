@@ -1,15 +1,21 @@
-<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-dark bg-default sticky-top" id="sidenav-main">
   <div class="container-fluid">
     <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon" style="color:#172b4d"></span>
     </button>
     <!-- Brand -->
     <a class="navbar-brand pt-0" href="{{ route('home') }}">
       <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
     </a>
     <!-- User -->
-    <ul class="nav align-items-center d-md-none">
+    <ul class="nav align-items-center d-md-none" id="user-nav">
+         <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="ni ni-cart"></i>
+            <span class="cart-notif bg-success">7</span>
+          </a>
+          </li>
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
@@ -20,7 +26,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
           <div class=" dropdown-header noti-title">
-            <h6 class="text-overflow m-0">{{ Auth::user() ->name }}
+            <h6 class="text-overflow m-0 text-capitalize">{{ Auth::user() ->name }}
              <span class="badge badge-pill badge-success ml-2">Customer</span>
             </h6>
           </div>
@@ -64,19 +70,20 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">
-            <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
+            <i class="ni ni-tv-2 text-info"></i> {{ __('Dashboard') }}
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('profile.edit') }}">
-            <i class="ni ni-cart"></i>My Cart
+            <i class="ni ni-cart text-green"></i>My Cart
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('user.index') }}">
-            <i class="fas fa-history"></i>Orders History
+            <i class="fas fa-history text-yellow"></i>Orders History
           </a>
         </li>
+     </ul>
       </div>
     </div>
   </nav>
