@@ -1,5 +1,5 @@
 <!-- Top navbar -->
-<nav class="navbar navbar-top navbar-expand-md navbar-dark sticky-top" id="navbar-main">
+<nav class="navbar navbar-top navbar-expand-md navbar-dark sticky-top shadow" id="navbar-main">
   <div class="container-fluid">
     <!-- Brand -->
     <a class="h4 mb-0 text-white text-uppercase d-none d-md-inline-block" href="{{ route('home') }}">
@@ -20,7 +20,7 @@
               <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
             </span>
           <div class="media-body d-none d-md-block mr--2 pl-3">
-            <span class="mb-0 text-sm font-weight-bold text-capitalize">{{ Auth::user() ->name }}</span>
+            <span class="mb-0 text-sm font-weight-bold text-capitalize tag-name">{{ Auth::user() ->name }}</span>
           </div>
           </div>
         </a>

@@ -48,5 +48,9 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+    
+    <!--Custom JS-->
+    
+        <script src="{{ asset('assets') }}/js/script.js"></script>
     </body>
 </html>

@@ -2,15 +2,24 @@
   position: fixed;
   top: 0;
 }
+#navbar-main.add-color {
+  background: white;
+}
+#navbar-main.add-color .ni-cart, #navbar-main.add-color .tag-name {
+  color: #172b4d;
+}
 
 #topbar .nav-item.cart-notif .notif {
   position: absolute;
-  color: white !important;
-  width: 1.7em;
-  height: 1.7em;
-  transform: translate(0, 2em);
+  font-size: 0.7em;
+  height: 1.8em;
+  width: 1.8em;
+  transform: translate(0, 2.8em);
 }
 
+#sidenav-main #sidebar-desk .nav-link {
+  color: white !important;
+}
 @media (max-width: 720px) {
   #sidenav-main {
     background: white !important;
@@ -25,7 +34,7 @@
   position: absolute;
   font-size: 0.7rem;
   font-weight: bold;
-  color: white;
+  color: #172b4d;
   text-align: center;
   line-height: 1.7em;
   width: 1.7em;

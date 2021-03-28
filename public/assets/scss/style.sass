@@ -1,21 +1,36 @@
-// NAVBAR
+// DESKTOP NAVBAR
+$text-color: #172b4d
 
 #navbar-main
   position: fixed
   top: 0
   
+  &.add-color
+    background: white
+    
+    .ni-cart, .tag-name
+        color: $text-color
+  
 #topbar
   .nav-item.cart-notif
     .notif
       position: absolute
-      color: white !important
-      width: 1.7em
-      height: 1.7em
-      transform: translate(0, 2em)
-    
+      font-size: .7em
+      height: 1.8em
+      width: 1.8em
+      transform: translate(0, 2.8em)
+
+
+// MOBILE NAVBAR    
 #sidenav-main
+  #sidebar-desk .nav-link
+    color: white !important
+    
   @media(max-width: 720px)
     background: white !important
+ 
+//    & .navbar-toggler
+      color: $text-color !important
   
 #user-nav
   .ni-cart
@@ -26,7 +41,7 @@
     position: absolute
     font-size: .7rem
     font-weight: bold
-    color: white
+    color: $text-color
     text-align: center
     line-height: 1.7em
     width: 1.7em

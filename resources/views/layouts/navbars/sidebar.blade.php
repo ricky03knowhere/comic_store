@@ -1,8 +1,8 @@
-<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-dark bg-default sticky-top" id="sidenav-main">
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-default sticky-top" id="sidenav-main">
   <div class="container-fluid">
     <!-- Toggler -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" style="color:#172b4d"></span>
+      <span class="navbar-toggler-icon" ></span>
     </button>
     <!-- Brand -->
     <a class="navbar-brand pt-0" href="{{ route('home') }}">
@@ -67,7 +67,7 @@
       </div>
       <!-- Form -->
       <!-- Navigation -->
-      <ul class="navbar-nav">
+      <ul class="navbar-nav" id="sidebar-desk">
         <li class="nav-item">
           <a class="nav-link" href="{{ route('home') }}">
             <i class="ni ni-tv-2 text-info"></i> {{ __('Dashboard') }}
