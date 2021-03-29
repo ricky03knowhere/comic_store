@@ -33,7 +33,7 @@
             @include('layouts.navbars.sidebar')
         @endauth
         
-        <div class="main-content">
+        <div class="main-content mt--3">
             @include('layouts.navbars.navbar')
             @yield('content')
         </div>

@@ -19,8 +19,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function index()
-    {
+    public function index() {
         return view('dashboard');
+    }
+    public function adminHome() {
+        return view('admin/adminHome');
     }
 }

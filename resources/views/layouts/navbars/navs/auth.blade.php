@@ -2,8 +2,9 @@
 <nav class="navbar navbar-top navbar-expand-md navbar-dark sticky-top shadow" id="navbar-main">
   <div class="container-fluid">
     <!-- Brand -->
-    <a class="h4 mb-0 text-white text-uppercase d-none d-md-inline-block" href="{{ route('home') }}">
-      <i class="ni ni-tv-2 mr-2 mt--2"></i>{{ __('Dashboard') }}</a>
+    <a class="h4 mb-0 text-white text-uppercase ml--3" href="{{ route('home') }}">
+    </a>
+
     <!-- Form -->
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex text-right" id="topbar">
@@ -19,15 +20,19 @@
             <span class="avatar avatar-sm rounded-circle">
               <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
             </span>
-          <div class="media-body d-none d-md-block mr--2 pl-3">
-            <span class="mb-0 text-sm font-weight-bold text-capitalize tag-name">{{ Auth::user() ->name }}</span>
-          </div>
+            <div class="media-body d-none d-md-block mr--2 pl-3">
+              <span class="mb-0 text-sm font-weight-bold text-capitalize tag-name">{{ Auth::user() ->name }}</span>
+            </div>
           </div>
         </a>
         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
           <div class=" dropdown-header noti-title">
             <h6 class="text-overflow m-0 text-capitalize">{{ Auth::user() ->name }}
+             @if(Auth::user() ->is_admin == 1)
+              <span class="badge badge-pill badge-warning ml-2">Administrator</span>
+           @else
               <span class="badge badge-pill badge-success ml-2">Customer</span>
+           @endif
             </h6>
           </div>
           <a href="{{ route('profile.edit') }}" class="dropdown-item">
