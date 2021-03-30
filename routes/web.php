@@ -6,6 +6,7 @@ use App\Http\Controllers\BooksController;
 use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HistoryController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,22 +39,17 @@ Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) -
 
 //User Pages
 Route::post('/user', [UsersController::class, 'update'])->name('update');
-Route::get('/user/profile', [UsersController::class, 'index'])->name('user');
+Route::get('/profile/details', [ProfileController::class, 'index'])->name('profile');
 Route::get('/user/{user}/edit', [UsersController::class, 'edit'])->name('user');
 
 //History Pages
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/history/{id}', [HistoryController::class, 'details'])->name('history');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
-
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile', 'uses' => 'App\Http\Controllers\ProfileController@index']);
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::get('upgrade', function () {return view('pages.upgrade');})->name('upgrade'); 

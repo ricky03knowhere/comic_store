@@ -12,18 +12,18 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Today Transactions</h5>
-                  <span class="h2 font-weight-bold mb-0">239</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Today Income</h5>
+                  <span class="h2 font-weight-bold mb-0">Rp 10.390.334 ,-</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                    <i class="fa fa-transactions"></i>
+                    <i class="fas fa-hand-holding-usd"></i>
                   </div>
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-success mr-2">Rp 10.303.209 ,-</span>
-                <span class="text-nowrap">Today income</span>
+                <span class="text-success mr-2">102</span>
+                <span class="text-nowrap">Today transactions</span>
               </p>
             </div>
           </div>
@@ -33,12 +33,12 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Sale</h5>
-                  <span class="h2 font-weight-bold mb-0">20 Titles</span>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Sold out books</h5>
+                  <span class="h2 font-weight-bold mb-0">20 titles</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-green text-white rounded-circle shadow">
-                    <i class="fa fa-money"></i>
+                    <i class="fas fa-money-check-alt"></i>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
                 <span class="text-primary mr-2">  3 Administrators </span> |
-                <span class="text-success mr-2"> 112 Customers</span>
+                <span class="text-warning mr-2"> 112 Customers</span>
               </p>
             </div>
           </div>

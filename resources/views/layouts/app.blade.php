@@ -30,7 +30,12 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-            @include('layouts.navbars.sidebar')
+            @if(Auth::user() ->is_admin == 1)
+              @include('layouts.navbars.sidebar_admin')
+            @else
+              @include('layouts.navbars.sidebar')
+            @endif
+            
         @endauth
         
         <div class="main-content mt--3">

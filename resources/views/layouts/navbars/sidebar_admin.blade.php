@@ -30,11 +30,11 @@
              <span class="badge badge-pill badge-primary ml-2">Administrator</span>
             </h6>
           </div>
-          <a href="{{ route('profile.edit') }}" class="dropdown-item">
+          <a href="{{ url('profile/details') }}" class="dropdown-item">
             <i class="ni ni-single-02"></i>
             <span>{{ __('My profile') }}</span>
           </a>
-          <a href="#" class="dropdown-item">
+          <a href="{{ route('profile.edit') }}" class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
             <span>Edit Profile</span>
           </a>
@@ -53,7 +53,7 @@
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a href="{{ route('home') }}">
+            <a href="{{ url('admin/home') }}">
               <img src="{{ asset('argon') }}/img/brand/blue.png">
             </a>
           </div>
