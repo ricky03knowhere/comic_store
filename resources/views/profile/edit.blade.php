@@ -2,21 +2,20 @@
 
 @section('content')
     @include('users.partials.header', [
-        'title' => __('Hello') . ' '. auth()->user()->name,
-        'description' => __('This is your profile page. You can see the progress you\'ve made with your work and manage your projects or assigned tasks'),
+        'title' => __('Hello, ') . ' '. auth()->user()->name,
         'class' => 'col-lg-7'
     ])   
 
     <div class="container-fluid mt--7">
-        <div class="row">
-            <div class="col-xl-8 order-xl-1">
-                <div class="card bg-secondary shadow">
+        <div class="row justify-content-center">
+            <div class="col-md-9 order-xl-1">
+                <div class="card bg-secondary shadow mb-6">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
                             <h3 class="mb-0">{{ __('Edit Profile') }}</h3>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body p-5">
                         <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
                             @csrf
                             @method('put')
@@ -56,7 +55,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
+                                    <button type="submit" class="btn btn-default mt-4">{{ __('Save') }}</button>
                                 </div>
                             </div>
                         </form>
@@ -103,7 +102,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">{{ __('Change password') }}</button>
+                                    <button type="submit" class="btn btn-default mt-4">{{ __('Change password') }}</button>
                                 </div>
                             </div>
                         </form>

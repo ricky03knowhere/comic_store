@@ -8,12 +8,14 @@
     <!-- Form -->
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex text-right" id="topbar">
+      @if(Auth::user() ->is_admin != 1)
       <li class="nav-item dropdown cart-notif">
         <a class="nav-link nav-link-icon" href="#" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="ni ni-cart"></i>
           <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif">48</span>
         </a>
       </li>
+@endif
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
@@ -29,17 +31,17 @@
           <div class=" dropdown-header noti-title">
             <h6 class="text-overflow m-0 text-capitalize">{{ Auth::user() ->name }}
              @if(Auth::user() ->is_admin == 1)
-              <span class="badge badge-pill badge-warning ml-2">Administrator</span>
+              <span class="badge badge-pill badge-primary ml-2">Administrator</span>
            @else
               <span class="badge badge-pill badge-success ml-2">Customer</span>
            @endif
             </h6>
           </div>
-          <a href="{{ route('profile.edit') }}" class="dropdown-item">
+          <a href="{{ url('profile/details') }}" class="dropdown-item">
             <i class="ni ni-single-02"></i>
             <span>{{ __('My profile') }}</span>
           </a>
-          <a href="#" class="dropdown-item">
+          <a href="{{ route('profile.edit') }}" class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
             <span>Edit Profile</span>
           </a>

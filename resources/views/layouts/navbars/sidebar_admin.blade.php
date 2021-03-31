@@ -10,12 +10,6 @@
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none" id="user-nav">
-         <li class="nav-item">
-          <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="ni ni-cart"></i>
-            <span class="cart-notif bg-success">7</span>
-          </a>
-          </li>
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
@@ -69,13 +63,13 @@
       <!-- Navigation -->
       <ul class="navbar-nav" id="sidebar-desk">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">
+          <a class="nav-link" href="{{ url('admin/home') }}">
             <i class="ni ni-tv-2 text-danger"></i> {{ __('Dashboard') }}
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('profile.edit') }}">
-            <i class="fa fa-transaction text-green"></i>Transactions
+            <i class="fa fa-hand-holding-usd text-green"></i>Transactions
           </a>
         </li>
         <li class="nav-item">
