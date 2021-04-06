@@ -24,6 +24,12 @@ class BooksController extends Controller
         $books = Book::paginate(20);
         return view('book/index', compact('books'));
     }
+    
+    public function bookList()
+    {
+        $books = Book::paginate(20);
+        return view('book/list', compact('books'));
+    }
 
     /**
      * Show the form for creating a new resource.

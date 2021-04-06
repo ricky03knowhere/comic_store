@@ -30,6 +30,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/book', [BooksController::class, 'index'])->name('book');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
+
 //Order Pages
 Route::get('/order/{id}', [OrdersController::class, 'index'])-> where('id', '[0-9]+');
 Route::post('/order/{id}', [OrdersController::class, 'store']);
@@ -45,6 +46,9 @@ Route::get('/user/{user}/edit', [UsersController::class, 'edit'])->name('user');
 //History Pages
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/history/{id}', [HistoryController::class, 'details'])->name('history');
+
+//Admin Page
+Route::get('/book/list', [BooksController::class, 'bookList'])->name('book');
 
 
 Route::group(['middleware' => 'auth'], function () {

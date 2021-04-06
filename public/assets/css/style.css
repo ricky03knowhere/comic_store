@@ -51,4 +51,30 @@
   padding-bottom: 3em !important;
 }
 
+.table .img {
+  border-radius: 5em;
+  height: 5em;
+  width: 5em;
+  overflow: hidden;
+}
+.table .img img {
+  width: 5em;
+}
+.table .btn-sm {
+  border-radius: 10em;
+  font-size: 0.6rem;
+  padding: 0.6em;
+  height: 3em;
+  width: 3em;
+  text-align: center;
+  line-height: 1.6em;
+}
+
+.table-card .btn-add {
+  width: 10em;
+  left: 100%;
+  position: relative;
+  transform: translateX(-11em);
+}
+
 /*# sourceMappingURL=style.css.map */

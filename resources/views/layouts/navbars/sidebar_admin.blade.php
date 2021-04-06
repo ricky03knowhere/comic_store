@@ -73,7 +73,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('user.index') }}">
+          <a class="nav-link" href="{{ url('book/list') }}">
             <i class="ni ni-book-bookmark text-info"></i>Books Collection
           </a>
         </li>

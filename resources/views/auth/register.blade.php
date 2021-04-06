@@ -62,9 +62,6 @@
                 <input class="form-control" placeholder="{{ __('Confirm Password') }}" type="password" name="password_confirmation" required>
               </div>
             </div>
-            <div class="text-muted font-italic">
-              <small>{{ __('password strength') }}: <span class="text-success font-weight-700">{{ __('strong') }}strong</span></small>
-            </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary mt-4">{{ __('Create account') }}</button>
             </div>

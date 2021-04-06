@@ -1,7 +1,7 @@
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
-      <a class="h4 text-white text-uppercase ml--3" href="{{ route('home') }}">
+      <a class="h4 text-white text-uppercase" href="{{ route('home') }}">
         <i class="ni ni-tv-2 mr-2 mt--2"></i>
         Dashboard
       </a>
