@@ -1,4 +1,4 @@
-<div class="row align-items-center justify-content-xl-between mt--4">
+<div class="row align-items-center justify-content-xl-between mt-4">
     <div class="col-xl-6">
         <div class="copyright text-center text-xl-left text-muted">
             Copyright &copy; {{ now()->year }} by <a href="https://ricky03knowhere.github.io" class="font-weight-bold ml-1" target="_blank">ricky_ackerman</a> &amp;

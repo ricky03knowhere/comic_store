@@ -1,3 +1,7 @@
+//Data Tables 
+$('#dataTable').dataTable()
+
+//Navabar transitions
 $(document).ready(function() {
   $(window).scroll(function() {
     var nScroll = $(this).scrollTop();

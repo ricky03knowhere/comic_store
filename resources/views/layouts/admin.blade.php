@@ -48,8 +48,12 @@
         
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
+  
+        <!-- DataTables JS -->
+        <script src="{{ asset('assets') }}/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="{{ asset('assets') }}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
     
-    <!--Custom JS-->
+        <!--Custom JS-->
     
         <script src="{{ asset('assets') }}/js/script.js"></script>
     </body>
