@@ -58,8 +58,13 @@
         <script src="{{ asset('assets') }}/vendor/datatables/jquery.dataTables.min.js"></script>
         <script src="{{ asset('assets') }}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
   
+  
+        <!--SweetAlert JS-->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+      
         <!--Custom JS-->
-        <script src="{{ asset('assets') }}/js/script.js"></script>
+        <script src="{{ asset('assets')}}/js/script.js"></script>
+        <script src="{{ asset('assets')}}/js/confirm.js"></script>
   
     </body>
 </html>

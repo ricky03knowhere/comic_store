@@ -45,14 +45,24 @@ class BooksController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function store(Request $request) {
-    
-    $request ->picture = 'default.jpg';
-    
-    Book::create($request ->all());
-    
-    alert() ->toast('Order has been removed', 'success');
 
-    return redirect('book/list');
+    $picture = $request -> picture;
+    $picture_name = date('Ymd').rand(100, 99999).'.'.$picture ->getClientOriginalExtension();
+
+    $book = new Book();
+    $book -> title = $request ->title;
+    $book -> author = $request ->author;
+    $book -> desc = $request ->desc;
+    $book -> price = $request ->price;
+    $book -> stock = $request ->stock;
+
+    $book -> picture  = $picture_name;
+
+    $picture ->move(public_path().'/assets/img/books/', $picture_name);
+
+    $book ->save();
+    
+    return redirect('book/list') ->with('notif', 'Book Data added successfully');
   }
 
   /**
@@ -72,7 +82,9 @@ class BooksController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function edit($id) {
-    //
+    $book = Book::where('id', $id) ->first();
+    
+    return view('book/edit', compact('book'));
   }
 
   /**

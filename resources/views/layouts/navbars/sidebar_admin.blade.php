@@ -13,7 +13,7 @@
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
-            <span class="avatar avatar-sm rounded-circle">
+            <span class="avatar avatar-sm rounded-circle" id="user-img">
               <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
             </span>
           </div>
@@ -33,8 +33,7 @@
             <span>Edit Profile</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
+          <a href="{{ route('logout') }}" class="dropdown-item" id="btn-logout">
             <i class="ni ni-user-run"></i>
             <span>{{ __('Logout') }}</span>
           </a>

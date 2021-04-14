@@ -15,7 +15,7 @@
           <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif">48</span>
         </a>
       </li>
-@endif
+      @endif
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
@@ -30,11 +30,11 @@
         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
           <div class=" dropdown-header noti-title">
             <h6 class="text-overflow m-0 text-capitalize">{{ Auth::user() ->name }}
-             @if(Auth::user() ->is_admin == 1)
+              @if(Auth::user() ->is_admin == 1)
               <span class="badge badge-pill badge-primary ml-2">Administrator</span>
-           @else
+              @else
               <span class="badge badge-pill badge-success ml-2">Customer</span>
-           @endif
+              @endif
             </h6>
           </div>
           <a href="{{ url('profile/details') }}" class="dropdown-item">
@@ -46,11 +46,15 @@
             <span>Edit Profile</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
-            <i class="ni ni-user-run"></i>
-            <span>{{ __('Logout') }}</span>
+     
+          <a href="#!" class="dropdown-item" id="btn-logout">
+           <i class="ni ni-user-run"></i>
+           <span>{{ __('Logout') }}</span>
           </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+
         </div>
       </li>
     </ul>

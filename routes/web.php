@@ -27,9 +27,12 @@ Auth::routes();
 //Base Pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
+//Book Pages
 Route::get('/book', [BooksController::class, 'index'])->name('book');
 Route::post('/book/save', [BooksController::class, 'store'])->name('book');
-Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+Route::get('/book/edit/{id}', [BooksController::class, 'edit'])->name('book');
 
 
 //Order Pages
