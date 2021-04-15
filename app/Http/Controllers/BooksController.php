@@ -62,7 +62,7 @@ class BooksController extends Controller
 
     $book ->save();
     
-    return redirect('book/list') ->with('notif', 'Book Data added successfully');
+    return redirect('book/list') ->with('notif', 'Book data added successfully');
   }
 
   /**
@@ -82,6 +82,7 @@ class BooksController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function edit($id) {
+    
     $book = Book::where('id', $id) ->first();
     
     return view('book/edit', compact('book'));
@@ -94,8 +95,19 @@ class BooksController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id) {
-    //
+  public function update(Request $request, Book $book) {
+
+   $get_book = Book::where('id', $book ->id);
+  // $old_pict = $get_book -> picture;
+  
+  //   if ($old_pict != $book -> picture) {
+  //   }
+  dd($request ->picture);
+    $request ->picture ->move(public_path().'/assets/img/books/', $get_book ->picture);
+    
+    $get_book ->update();
+    
+    return redirect('book/list') ->with('notif', 'Book data updated successfully');
   }
 
   /**

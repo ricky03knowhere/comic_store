@@ -33,6 +33,7 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('/book', [BooksController::class, 'index'])->name('book');
 Route::post('/book/save', [BooksController::class, 'store'])->name('book');
 Route::get('/book/edit/{id}', [BooksController::class, 'edit'])->name('book');
+Route::post('/book/update/{book}', [BooksController::class, 'update'])->name('book');
 
 
 //Order Pages

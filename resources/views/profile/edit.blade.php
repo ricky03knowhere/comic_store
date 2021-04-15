@@ -8,7 +8,7 @@
 
     <div class="container-fluid mt--7">
         <div class="row justify-content-center">
-            <div class="col-md-9 order-xl-1">
+            <div class="col-md-9 col-xl-8">
                 <div class="card bg-secondary shadow mb-6">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
