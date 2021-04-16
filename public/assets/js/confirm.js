@@ -16,20 +16,24 @@ const Toast = Swal.mixin({
 const notif = $('#notif').data('notif')
 
 if (notif) {
-Toast.fire({
-  icon: 'success',
-  title: notif
-})
-  
+  Toast.fire({
+    icon: 'success',
+    title: notif
+  })
+
 }
 
 // Warning Notification
-$('#btn-logout').on('click', function (e) {
+
+$('.warn-notif').on('click', function (e) {
   e.preventDefault();
-  let id = $(this).data('id');
+
+  let form = $(this).data('form');
+  let message = $(this).data('msg');
+
   Swal.fire({
     title: 'Are you sure ?',
-    text: "To leave this site...",
+    text: `To ${message}`,
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#5e72e4',
@@ -37,27 +41,7 @@ $('#btn-logout').on('click', function (e) {
     confirmButtonText: 'Ok'
   }).then((result) => {
     if (result.isConfirmed) {
-      $('#logout-form').submit();
+      $(`#${form}`).submit()
     }
   })
-});
-
-//
-$('#delete-user').on('click', function (e) {
-  alert('ok2')
-  e.preventDefault();
-  let id = $(this).data('id');
-  Swal.fire({
-    title: 'Are you sure ?',
-    text: "To remove this order...",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#3085d6',
-    cancelButtonColor: '#d33',
-    confirmButtonText: 'Remove'
-  }).then((result) => {
-    if (result.isConfirmed) {
-      $('#remove-order').submit();
-    }
-  })
-});
+})

@@ -56,12 +56,12 @@ class BooksController extends Controller
     $book -> price = $request ->price;
     $book -> stock = $request ->stock;
 
-    $book -> picture  = $picture_name;
+    $book -> picture = $picture_name;
 
     $picture ->move(public_path().'/assets/img/books/', $picture_name);
 
     $book ->save();
-    
+
     return redirect('book/list') ->with('notif', 'Book data added successfully');
   }
 
@@ -82,9 +82,9 @@ class BooksController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function edit($id) {
-    
+
     $book = Book::where('id', $id) ->first();
-    
+
     return view('book/edit', compact('book'));
   }
 
@@ -97,16 +97,23 @@ class BooksController extends Controller
   */
   public function update(Request $request, Book $book) {
 
-   $get_book = Book::where('id', $book ->id);
-  // $old_pict = $get_book -> picture;
-  
-  //   if ($old_pict != $book -> picture) {
-  //   }
-  dd($request ->picture);
-    $request ->picture ->move(public_path().'/assets/img/books/', $get_book ->picture);
-    
-    $get_book ->update();
-    
+    $get_book = Book::where('id', $book ->id) ->first();
+    $old_pict = $get_book ->picture;
+    $new_pict = $request ->picture;
+
+    if ($new_pict) {
+      $new_pict ->move(public_path().'/assets/img/books/', $old_pict);
+    }
+
+    $get_book ->update([
+      'title' => $request ->title,
+      'author' => $request ->author,
+      'stock' => $request ->stock,
+      'price' => $request ->price,
+      'desc' => $request ->desc,
+      'picture' => $old_pict
+    ]);
+
     return redirect('book/list') ->with('notif', 'Book data updated successfully');
   }
 
@@ -117,6 +124,8 @@ class BooksController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function destroy($id) {
-    //
+    Book::destroy($id);
+
+    return redirect('book/list') ->with('notif', 'Book data deleted successfully');
   }
 }

@@ -33,7 +33,7 @@
             <span>Edit Profile</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="{{ route('logout') }}" class="dropdown-item" id="btn-logout">
+          <a href="{{ route('logout') }}" class="dropdown-item btn-logout warn-notif" data-msg="leave this page..." data-form="logout-form">
             <i class="ni ni-user-run"></i>
             <span>{{ __('Logout') }}</span>
           </a>
