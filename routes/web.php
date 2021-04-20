@@ -32,6 +32,7 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 //Book Pages
 Route::get('/book', [BooksController::class, 'index'])->name('book');
 Route::post('/book/save', [BooksController::class, 'store'])->name('book');
+Route::get('/book/detail/{id}', [BooksController::class, 'show'])->name('book');
 Route::get('/book/edit/{id}', [BooksController::class, 'edit'])->name('book');
 Route::delete('/book/delete/{id}', [BooksController::class, 'destroy'])->name('book');
 Route::post('/book/update/{book}', [BooksController::class, 'update'])->name('book');

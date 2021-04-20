@@ -40,12 +40,10 @@
                 <td class="align-middle">{{ $book -> title }}</td>
                 <td class="align-middle">{{ $book -> stock }}</td>
                 <td class="align-middle">
-                  <a href=""
+                  <a href="{{ url('book/detail', $book ->id) }}"
                     class="btn btn-primary btn-sm info">
                     <i class="fa fa-info-circle"></i></a>
-                  <a href="{{ url('book/edit', $book ->id) }}"
-                    class="btn btn-success btn-sm edit">
-                    <i class="fa fa-edit"></i></a>
+                    
                   <a href="#!"
                     class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..." data-form="delete-form">
                     <i class="fa fa-trash-alt"></i></a>

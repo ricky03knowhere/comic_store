@@ -72,7 +72,9 @@ class BooksController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function show($id) {
-    //
+    $book = Book::where('id', $id) ->first();
+    
+    return view('book/details', compact('book'));
   }
 
   /**
@@ -114,7 +116,7 @@ class BooksController extends Controller
       'picture' => $old_pict
     ]);
 
-    return redirect('book/list') ->with('notif', 'Book data updated successfully');
+    return redirect('book/detail/'.$book ->id) ->with('notif', 'Book data updated successfully');
   }
 
   /**
