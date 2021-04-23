@@ -20,7 +20,7 @@
           </h2>
         </div>
 
-        <div class="card-body p-5">
+        <div class="card-body py-5 px-3">
           <div class="row">
             <div class="col-md-5 mb-2">
               <img src="{{ asset('assets/img/books').'/'.$book ->picture }}" alt="404" class="img-thumbnail rounded">
@@ -28,11 +28,26 @@
 
             <div class="col-md-7">
               <h3>{{ $book -> title }} </h3>
-              <span class="text-muted"><i class="ni ni-single-02 mr-1"></i>Author &#8;&#8;: {{ $book -> author }} </span>
-              <h4 class="text-orange my-3"><i class="ni ni-books mr-1"></i>Stock &#8;&#8;: {{ $book -> stock }} pcs</h4>
-              <h4 class="text-green"><i class="fas fa-dollar-sign mr-1"></i>Price : Rp {{ $book -> price }},-</h4>
+
+              <table>
+                <tr class="text-muted">
+                  <td><i class="ni ni-single-02 mr-2"></i></td>
+                  <td class="align-top">Author</td>
+                  <td><span class="px-3">:</span> {{ $book -> author }}</td>
+                </tr>
+                <tr class="text-orange h4" style="height: 2.5em;">
+                  <td><i class="ni ni-books mr-2"></i></td>
+                  <td>Stock</td>
+                  <td><span class="px-3">:</span> {{ $book -> stock }} pcs</td>
+                </tr>
+                <tr class="text-green h4">
+                  <td><i class="fas fa-dollar-sign  mr-2"></i></td>
+                  <td>Price</td>
+                  <td><span class="px-3">:</span>Rp. {{ number_format($book -> price) }},-</td>
+                </tr>
+              </table>
             </div>
-            
+
           </div>
           <p class="my-4 text-justify mx-3">
             <b><i class="ni ni-single-copy-04 mr-1"></i>Sinopsis :</b><br>
@@ -53,7 +68,7 @@
     </div>
   </div>
 
-@include('layouts.footers.auth')
+  @include('layouts.footers.auth')
 </div>
 
 @endsection
