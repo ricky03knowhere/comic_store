@@ -14,7 +14,7 @@
           <div class="col-lg-3 order-lg-2 mb-5">
             <div class="card-profile-image">
               <a href="#">
-                <img src="{{ asset('argon') }}/img/theme/team-4-800x800.jpg" class="rounded-circle">
+                <img src="{{ asset('assets/img/users').'/'.auth() ->user() ->picture }}" class="rounded-circle" alt="user_picture">
               </a>
             </div>
           </div>
@@ -39,13 +39,13 @@
               {{ auth()->user()->email }}
             </div>
             <div class="h5 mt-4">
-              <i class="fa fa-phone-square-alt mr-2"></i>{{ auth()->user()->phone }}
+              <i class="fa fa-phone-alt mr-2"></i>{{ auth()->user()->phone }}
             </div>
             <div>
               <i class="ni ni-pin-3 mr-2"></i>{{ auth()->user()->address }}
             </div>
           </div>
-          <a href="{{ route('profile.edit') }}" class="btn btn-default badge-pill float-right mt-5 mb-3">
+          <a href="{{ url('profile/edit',Auth::user() ->id) }}" class="btn btn-default badge-pill float-right mt-5 mb-3">
             <i class="fas fa-edit mr-1"></i>Edit Profile</a>
         </div>
       </div>

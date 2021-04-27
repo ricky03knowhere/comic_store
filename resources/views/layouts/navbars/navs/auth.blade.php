@@ -41,7 +41,7 @@
             <i class="ni ni-single-02"></i>
             <span>{{ __('My profile') }}</span>
           </a>
-          <a href="{{ route('profile.edit') }}" class="dropdown-item">
+          <a href="{{ url('profile/edit',Auth::user() ->id) }}" class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
             <span>Edit Profile</span>
           </a>
