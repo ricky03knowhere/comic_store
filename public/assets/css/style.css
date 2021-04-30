@@ -77,4 +77,15 @@
   transform: translateX(-11em);
 }
 
+#profile .card-profile-image {
+  width: 10em;
+  height: 10em;
+  border-radius: 6em;
+  overflow: hidden;
+  margin: auto;
+}
+#profile .card-profile-image img {
+  width: 10em;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -48,7 +48,7 @@ Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) -
 //User Pages
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('update');
 Route::get('/profile/details', [ProfileController::class, 'index'])->name('profile');
-Route::get('/profile/edit/{user}', [UsersController::class, 'edit'])->name('profile');
+Route::get('/profile/edit', [UsersController::class, 'edit'])->name('profile');
 
 //History Pages
 Route::get('/history', [HistoryController::class, 'index'])->name('history');

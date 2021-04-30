@@ -1,7 +1,7 @@
 @extends('../layouts.app')
 
 @section('content')
-    @include('layouts.headers.header')
+@include('layouts.headers.header')
 
 @if(session('notif'))
 <div id="notif" data-notif="{{ session('notif') }}"></div>
@@ -21,7 +21,7 @@
               <tr>
 
                 <th>No.</th>
-                <th>Picture</th>
+                <th>Cover</th>
                 <th>Title</th>
                 <th>Stock</th>
                 <th>Action</th>
@@ -43,14 +43,14 @@
                   <a href="{{ url('book/detail', $book ->id) }}"
                     class="btn btn-primary btn-sm info">
                     <i class="fa fa-info-circle"></i></a>
-                    
+
                   <a href="#!"
                     class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..." data-form="delete-form">
                     <i class="fa fa-trash-alt"></i></a>
-<form action="{{ url('book/delete', $book ->id) }}" id="delete-form" method="post">
-  @method('delete')
-  @csrf
-</form>
+                  <form action="{{ url('book/delete', $book ->id) }}" id="delete-form" method="post">
+                    @method('delete')
+                    @csrf
+                  </form>
                 </td>
               </tr>
               @endforeach
@@ -61,93 +61,93 @@
       </div>
     </div>
   </div>
-<div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
+  <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
 
-      <div class="modal-body p-0">
+        <div class="modal-body p-0">
 
-        <div class="card bg-secondary border-0 mb-0">
-          <div class="card-header bg-white">
-            <h3>Add New Book Form</h3>
+          <div class="card bg-secondary border-0 mb-0">
+            <div class="card-header bg-white">
+              <h3>Add New Book Form</h3>
+            </div>
+            <div class="card-body px-md-4 px-lg-5 py-lg-5">
+              <form role="form" action="{{ url('book/save') }}" method="post" enctype="multipart/form-data">
+                @csrf
+
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Title" name="title" required>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Author" name="author" required>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                    </div>
+                    <input class="form-control" placeholder="Price" type="number" name="price" required>
+                  </div>
+                </div>
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-books"></i></span>
+                    </div>
+                    <input type="number" class="form-control" placeholder="Quantity" name="stock" required>
+                  </div>
+                </div>
+
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-single-copy-04"></i></span>
+                    </div>
+                    <textarea class="form-control" placeholder="Description" name="desc" rows="3" required></textarea>
+                  </div>
+
+                </div>
+
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-merge input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-collection"></i></span>
+                    </div>
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture" required>
+                      <label class="custom-file-label" for="customFileLang">Select cover picture</label>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary my-4">Save</button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="card-body px-md-4 px-lg-5 py-lg-5">
-            <form role="form" action="{{ url('book/save') }}" method="post" enctype="multipart/form-data">
-              @csrf
-              
-              <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="Title" name="title" required>
-                </div>
-              </div>
-              <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-single-02"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="Author" name="author" required>
-                </div>
-              </div>
-              <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="Price" type="number" name="price" required>
-                </div>
-              </div>
-              <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-books"></i></span>
-                  </div>
-                  <input type="number" class="form-control" placeholder="Quantity" name="stock" required>
-                </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-single-copy-04"></i></span>
-                  </div>
-                  <textarea class="form-control" placeholder="Description" name="desc" rows="3" required></textarea>
-                </div>
-
-              </div>
-
-              <div class="form-group mb-3">
-                <div class="input-group input-group-merge input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-collection"></i></span>
-                  </div>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture">
-                    <label class="custom-file-label" for="customFileLang">Select cover picture</label>
-                  </div>
-                </div>
-              </div>
 
 
-              <div class="text-center">
-                <button type="button" class="btn btn-white ml-auto" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-primary my-4">Save</button>
-              </div>
-            </form>
-          </div>
+
+
         </div>
-
-
-
-
       </div>
     </div>
   </div>
-</div>
 
-@include('layouts.footers.auth')
+  @include('layouts.footers.auth')
 </div>
 
 @endsection

@@ -64,8 +64,8 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-primary mr-2"> ???</span>
-                <span class="text-nowrap">???</span>
+                <span class="text-primary mr-2"> Rp. 120.000,-</span>
+                <span class="text-nowrap">This Month</span>
               </p>
             </div>
           </div>
