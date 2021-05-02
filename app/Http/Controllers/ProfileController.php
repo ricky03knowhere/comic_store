@@ -33,24 +33,26 @@ class ProfileController extends Controller
     if (auth()->user()->id == 1) {
       return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
     }
-
+    
     $user = auth()-> user();
+    $old_pict = $user-> picture;
 
     $picture = $request ->picture;
 
     $picture_save = '';
-    
-    if ($user ->picture != null) {
-      $picture_save = $user ->picture;
-    }
-
 
     if ($picture) {
-      $picture_name = date('Ymd').rand(100, 99999).'.'.$picture ->getClientOriginalExtension();
-      $picture_save = $picture_name;
-      
+      if ($old_pict == null) {
+        $picture_name = date('Ymd').rand(100, 99999).'.'.$picture ->getClientOriginalExtension();
+        $picture_save = $picture_name;
+        
+      } else {
+        $picture_save = $old_pict;
+      }
       $picture ->move(public_path().'/assets/img/users/', $picture_save);
     }
+
+
 
 
     if (!empty($request -> password)) {

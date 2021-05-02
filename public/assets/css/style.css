@@ -8,6 +8,12 @@
 #navbar-main.add-color .ni-cart, #navbar-main.add-color .tag-name {
   color: #172b4d;
 }
+#navbar-main .user-img {
+  overflow: hidden;
+}
+#navbar-main .user-img img {
+  width: 4em;
+}
 
 #topbar .nav-item.cart-notif .notif {
   position: absolute;
@@ -29,6 +35,12 @@
   }
 }
 
+#user-nav #user-img {
+  overflow: hidden;
+}
+#user-nav #user-img img {
+  width: 4em;
+}
 #user-nav .ni-cart {
   font-size: 1.2rem;
 }
@@ -86,6 +98,7 @@
 }
 #profile .card-profile-image img {
   width: 10em;
+  transform: translate(0, 20px);
 }
 
 /*# sourceMappingURL=style.css.map */
