@@ -19,8 +19,8 @@
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <div class="media align-items-center">
-            <span class="avatar avatar-sm rounded-circle">
-              <img alt="Image placeholder" src="{{ asset('argon') }}/img/theme/team-1-800x800.jpg">
+            <span class="avatar avatar-sm rounded-circle" id="user-img">
+              <img alt="Image placeholder" src="{{ asset('assets/img/users').'/'.Auth::user() ->picture }}">
             </span>
           </div>
         </a>
@@ -34,7 +34,7 @@
             <i class="ni ni-single-02"></i>
             <span>{{ __('My profile') }}</span>
           </a>
-          <a href="{{ route('profile.edit') }}" class="dropdown-item">
+          <a href="{{ url('profile/edit') }}" class="dropdown-item">
             <i class="ni ni-settings-gear-65"></i>
             <span>Edit Profile</span>
           </a>

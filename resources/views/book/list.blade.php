@@ -74,37 +74,53 @@
             <div class="card-body px-md-4 px-lg-5 py-lg-5">
               <form role="form" action="{{ url('book/save') }}" method="post" enctype="multipart/form-data">
                 @csrf
+                <div class="row">
+                  <div class="col-md-6">
 
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
+                    <div class="form-group mb-3">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Title" name="title" required>
+                      </div>
                     </div>
-                    <input class="form-control" placeholder="Title" name="title" required>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Author" name="author" required>
+                      </div>
+                    </div>
+
                   </div>
                 </div>
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-single-02"></i></span>
+
+                <div class="row">
+                  <div class="col-md-6">
+
+                    <div class="form-group mb-3">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Price" type="number" name="price" required>
+                      </div>
                     </div>
-                    <input class="form-control" placeholder="Author" name="author" required>
                   </div>
-                </div>
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                  <div class="col-md-6">
+                    <div class="form-group mb-3">
+                      <div class="input-group input-group-merge input-group-alternative">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="ni ni-books"></i></span>
+                        </div>
+                        <input type="number" class="form-control" placeholder="Quantity" name="stock" required>
+                      </div>
                     </div>
-                    <input class="form-control" placeholder="Price" type="number" name="price" required>
-                  </div>
-                </div>
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-books"></i></span>
-                    </div>
-                    <input type="number" class="form-control" placeholder="Quantity" name="stock" required>
+
                   </div>
                 </div>
 

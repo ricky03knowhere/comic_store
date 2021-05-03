@@ -12,7 +12,7 @@
   overflow: hidden;
 }
 #navbar-main .user-img img {
-  width: 4em;
+  width: 3em;
 }
 
 #topbar .nav-item.cart-notif .notif {
@@ -39,7 +39,7 @@
   overflow: hidden;
 }
 #user-nav #user-img img {
-  width: 4em;
+  width: 3em;
 }
 #user-nav .ni-cart {
   font-size: 1.2rem;
@@ -97,8 +97,8 @@
   margin: auto;
 }
 #profile .card-profile-image img {
-  width: 10em;
-  transform: translate(0, 20px);
+  width: 11em;
+  transform: translate(-50%, -5%);
 }
 
 /*# sourceMappingURL=style.css.map */

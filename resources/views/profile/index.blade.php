@@ -34,7 +34,7 @@
           </button>
 
           <div class="text-center">
-            <h3>
+            <h3 class="text-capitalized">
               {{ auth()->user()->name }}
             </h3>
             <div class="h5 font-weight-300">
