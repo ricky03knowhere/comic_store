@@ -1,5 +1,6 @@
 #navbar-main {
   position: fixed;
+  z-index: 999;
   top: 0;
 }
 #navbar-main.add-color {

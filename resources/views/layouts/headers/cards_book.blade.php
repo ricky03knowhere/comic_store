@@ -4,8 +4,8 @@
       <!-- Card stats -->
       <div class="home-demo">
 
-        <div class="row mt-4">
-          <div class="large-12 columns">
+       <div class="row mb-8">
+        <div class="col-12 col-xs-11">
             <div class="owl-carousel owl-theme">
               @for($i=0;$i <= 3;$i++)
                 <div class="item">
@@ -19,6 +19,12 @@
 
 
         </div>
+  
+       <a class="h4 text-white text-uppercase" href="{{ route('home') }}">
+        <i class="ni ni-shop mr-2 mt--2"></i>
+       Store
+      </a>
+
       </div>
     </div>
   </div>

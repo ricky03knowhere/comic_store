@@ -1,31 +1,30 @@
-//Owl Carousel
-let owl = $('.owl-carousel');
-owl.owlCarousel({
-  margin: 10,
-  loop: true,
-  dotsEach: true,
-  autoplay: true,
-  responsive: {
-    0: {
-      items: 3
-    },
-    600: {
-      items: 5
-    },
-    1000: {
-      items: 6
-    }
-  }
-})
-
-
-
-
-//Data Tables
-$('#dataTable').dataTable()
-
-//Navabar transitions
 $(document).ready(function() {
+
+  //Owl Carousel
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 20,
+    dotsEach: true,
+    autoplay: true,
+    responsive: {
+      0: {
+        items: 2
+      }, 600: {
+        items: 4
+      }, 1000: {
+        items: 6
+      }
+    }
+  })
+
+
+
+
+  //Data Tables
+  $('#dataTable').dataTable()
+
+
+  //Navabar transitions
   $(window).scroll(function() {
     var nScroll = $(this).scrollTop();
     if (nScroll > 70) {

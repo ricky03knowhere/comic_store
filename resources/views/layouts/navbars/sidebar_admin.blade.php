@@ -63,7 +63,12 @@
       <ul class="navbar-nav" id="sidebar-desk">
         <li class="nav-item">
           <a class="nav-link" href="{{ url('admin/home') }}">
-            <i class="ni ni-tv-2 text-danger"></i> {{ __('Dashboard') }}
+            <i class="ni ni-tv-2 text-white"></i> {{ __('Dashboard') }}
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('book/') }}">
+            <i class="ni ni-shop text-orange"></i>Store
           </a>
         </li>
         <li class="nav-item">
