@@ -55,11 +55,11 @@ class LoginController extends Controller
 
       if (auth()->user()->is_admin == 1) {
 
-        return redirect()->view('admin.home') ->with('notif', 'Login Success..');
+        return redirect('admin/home') ->with('notif', 'Login Success..');
 
       } else {
 
-        return redirect()->view('book.index') ->with('notif', 'Login Success..');
+        return redirect('book/index') ->with('notif', 'Login Success..');
 
       }
 

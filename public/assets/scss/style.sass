@@ -113,3 +113,78 @@ $text-color: #172b4d
   img
     width: 11em
     transform: translate(-50%, -5%)
+
+
+//STORE PAGE
+
+#book-shelf 
+  .card 
+    border: none
+    border-radius: .8em
+    box-shadow: 2px 2px 10px #0005
+    overflow: hidden
+    width: 90%
+    @media(max-width: 720px)
+      width: 100%
+
+    
+  
+  .card-img-overlay
+    padding: 90% .7em
+    background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(0,0,0,1) 93%)   
+    // background: linear-gradient(360deg, rgba(0, 0, 0, .6) 10%, rgba(0, 0, 0, 0) 100%)
+    
+    .title, .author, .price
+      text-shadow: 1px 1px 3px #000f
+      position: relative
+   
+    .title
+      font-size: .8rem
+      top: .7em
+    
+    .author
+      color: #adb5bd
+      font-size: .6rem
+      
+    .price
+      -webkit-text-stroke: 1px #000
+      color: #00ff00
+      font-size: 1.2rem
+      top: 7.5em
+      right: 0
+      padding: .1em .7em
+      background: #fffa
+      border-radius: 20px 0 0 20px
+      font-weight: bold
+      position: absolute
+      
+    .btn-primary
+      right: 0
+      font-size: .8rem
+      padding: .3em 1em
+      top: .8em
+  
+    @media(max-width: 720px)
+      padding: 70% .6em
+      
+      >.price
+        top: 4.5em
+        font-size: 1.1rem
+        padding: 0 .5em
+      
+      >.btn-primary
+        margin: auto
+        right: .8em
+    
+
+
+// ORDER PAGE
+#order .form-group
+  width: 4em
+  top: -3em
+  position: relative
+  margin-left: 2.5em
+  
+  .form-control
+     text-align: center
+     height: 2em
