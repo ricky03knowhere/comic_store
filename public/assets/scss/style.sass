@@ -125,6 +125,7 @@ $text-color: #172b4d
     box-shadow: 2px 2px 10px #0005
     overflow: hidden
     width: 90%
+    height: 84%
     @media(max-width: 720px)
       width: 100%
 
@@ -132,7 +133,7 @@ $text-color: #172b4d
   
   .card-img-overlay
     padding: 90% .7em
-    background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(0,0,0,1) 93%)   
+    background: linear-gradient(180deg, rgba(255,255,255,0) 20%, rgba(0,0,0,1) 84%)   
     // background: linear-gradient(360deg, rgba(0, 0, 0, .6) 10%, rgba(0, 0, 0, 0) 100%)
     
     .title, .author, .price
@@ -182,10 +183,23 @@ $text-color: #172b4d
 // ORDER PAGE
 #order .form-group
   width: 4em
-  top: -3em
   position: relative
   margin-left: 2.5em
   
   .form-control
-     text-align: center
-     height: 2em
+    text-align: center
+    height: 2em
+    font-weight: bold
+   
+#order
+  .order-s
+    position: relative
+    top: 1.6em
+    
+  .synopsis 
+    padding: 2em 5em
+    h4
+      margin-bottom: 1.5em
+    span
+      text-indent: 1
+      text-align: justify

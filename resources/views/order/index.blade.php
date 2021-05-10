@@ -11,7 +11,7 @@
         <div class="card-header bg-white border-0">
           <h2 class="pt-1">
             <i class="ni ni-collection mx-2"></i> {{ $book -> title }} /
-            <i class="fas fa-cart mx-2"></i> Order
+            <i class="fa fa-shopping-cart mx-2"></i> Order
           </h2>
         </div>
 
@@ -43,34 +43,36 @@
                 </tr>
 
                 <tr class="text-primary h4">
-                  <td><i class="fas fa-cart  mr-2"></i></td>
-                  <td class="align-top">Order</td>
-                  <td class="align-top">
-                    <span class="px-3">:</span>
-                    <form action=" {{ url('order',[$book -> id]) }} " method="post">
+                  <td><i class="fa fa-shopping-cart mr-2"></i></td>
+                  <td>Order</td>
+                  <td>
+                    <span class="px-3 order-s">:</span>
+                    <form action=" {{ url('order',$book -> id) }} " method="post">
                       @csrf
                       <div class="form-group ">
                         <div class="input-group input-group-alternative">
                           <input type="number" class="form-control" id="quantity" name="quantity" value="1" required>
                         </div>
                       </div>
-                    </form>
-                  </td>
-                </tr>
-              </table>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+
             </div>
+            <p class="text-justify synopsis">
+              <h4><i class="ni ni-single-copy-04"></i>Synopsis :</h4><br>
+              <span>
+                {{ $book -> desc }}
+              </span>
+
+            </p>
 
           </div>
-          <p class="my-4 text-justify mx-3">
-            <b><i class="ni ni-single-copy-04 mr-1"></i>Sinopsis :</b><br>
-            {{ $book -> desc }}
-          </p>
 
-        </div>
-
-
-        <div class="text-center pb-3">
-          <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus mr-1"></i> Add to cart</button>
+          <div class="text-center pb-3">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus mr-1"></i> Add to cart</button>
+          </form>
           <button onclick="window.history.back()" class="btn btn-white ml-auto">Back</button>
         </div>
       </div>
