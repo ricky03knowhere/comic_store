@@ -10,7 +10,7 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-11">
 
-      <div class="card p-2 table-card">
+      <div class="card p-2 table-card" id="book-list">
         <h2 class="pt-1"><i class="ni ni-book-bookmark mr-2"></i>Books Collection</h2>
         <button type="button" class="btn btn-primary my-4 btn-add badge-pill d-flex float-right"
           data-toggle="modal" data-target="#modal-form"><i class="fas fa-plus mr-2"></i>Add Book</button>

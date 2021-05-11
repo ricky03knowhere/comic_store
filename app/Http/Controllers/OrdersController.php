@@ -49,12 +49,12 @@ class OrdersController extends Controller
     $user_id = Auth::user() ->id;
 
     if (($request ->quantity > $book ->stock)) {
-      alert()-> warning('Warning', 'Your order is out of stock');
-      return redirect('order/'.$id);
-    } else if ($request -> quantity == 0) {
+      
+      return redirect('order/'.$id) ->with('alert-notif', 'Your order is out of stock');
+    }
+    else if ($request -> quantity == 0) {
 
-      alert()-> warning('Warning', 'The order cannot be null ');
-      return redirect('order/'.$id);
+      return redirect('order/'.$id) ->with('alert-notif', 'The order cannot be null');
     }
 
 
@@ -195,8 +195,7 @@ alert() ->success('Success', 'Orders have been confirmed, please complete the pa
     $order ->update();
     $detail_order ->delete();
     
-    alert() ->toast('Order has been removed', 'success');
+    return redirect('checkout') ->with('notif','Order has been removed');
 
-    return redirect('checkout');
   }
 }

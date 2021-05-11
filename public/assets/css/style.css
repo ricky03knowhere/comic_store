@@ -64,16 +64,16 @@
   padding-bottom: 3em !important;
 }
 
-.table .img {
+#book-list .table .img {
   border-radius: 5em;
   height: 5em;
   width: 5em;
   overflow: hidden;
 }
-.table .img img {
+#book-list .table .img img {
   width: 5em;
 }
-.table .btn-sm {
+#book-list .table .btn-sm {
   border-radius: 10em;
   font-size: 0.6rem;
   padding: 0.6em;

@@ -13,17 +13,33 @@ const Toast = Swal.mixin({
 
 
 // Notification Checker
-const notif = $('#notif').data('notif')
 
+// --> Susscess Notification
+const successNotif = $('#notif').data('notif')
 if (notif) {
   Toast.fire({
     icon: 'success',
     title: notif
   })
-
 }
 
-// Warning Notification
+
+// --> Warning Alert
+const warnNotif = $('#alert-notif').data('notif')
+
+if (warnNotif) {
+  alert('warning alert')
+  Swal.fire({
+    title: 'Warning..!',
+    text: `${message}`,
+    icon: 'warning',
+    confirmButtonColor: '#5e72e4',
+    confirmButtonText: 'Ok'
+  })
+}
+
+
+// Warning Confirmation
 
 $('.warn-notif').on('click', function (e) {
   e.preventDefault();
