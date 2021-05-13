@@ -115,9 +115,8 @@ class OrdersController extends Controller
     $order -> total_price += $book -> price * $request -> quantity;
     $order ->update();
 
-    alert()-> success('Success', 'Order is successfully added to cart');
-    return redirect('checkout');
-  }
+  return redirect('checkout') ->with('notif', 'Order is successfully added to cart');
+}
 
   /**
   * Display the specified resource.

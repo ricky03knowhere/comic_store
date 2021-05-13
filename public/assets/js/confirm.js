@@ -16,10 +16,10 @@ const Toast = Swal.mixin({
 
 // --> Susscess Notification
 const successNotif = $('#notif').data('notif')
-if (notif) {
+if (successNotif) {
   Toast.fire({
     icon: 'success',
-    title: notif
+    title: successNotif
   })
 }
 
@@ -28,13 +28,13 @@ if (notif) {
 const warnNotif = $('#alert-notif').data('notif')
 
 if (warnNotif) {
-  alert('warning alert')
+
   Swal.fire({
     title: 'Warning..!',
-    text: `${message}`,
+    text: `${warnNotif}`,
     icon: 'warning',
     confirmButtonColor: '#5e72e4',
-    confirmButtonText: 'Ok'
+    confirmButtonText: 'Ok',
   })
 }
 

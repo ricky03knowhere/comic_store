@@ -35,7 +35,7 @@
 
         <div class="card-body py-5 px-3">
 
-          <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right my-3"><i class="fas fa-plus mr-1"></i> Add Order</a>
+          <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right mb-5"><i class="fas fa-plus mr-1"></i> Add Order</a>
 
           <div class="table-responsive">
 
@@ -66,7 +66,7 @@
                       @csrf
                       {{ method_field('DELETE') }}
                       <button class="btn btn-danger btn-sm delete-order warn-notif"
-                        data-msg="Are you sure to remove this order..?" data-form="remove-order">
+                        data-msg="remove this order..?" data-form="remove-order">
                         <i class="fas fa-trash mr-1"></i>Remove</button>
 
                     </form>
@@ -86,8 +86,14 @@
           </div>
 
           <div class="text-center">
-            <a href="{{ url('checkout/confirm') }}" class="btn btn-primary my-4"><i class="fa fa-cart-arrow-down mr-2"></i>Checkout</a>
-            <button onclick="window.history.back()" class="btn btn-white ml-auto">Back</button>
+              <form action="{{ url('checkout/confirm') }}" id="checkout">
+                      @csrf
+            <button type="submit" class="btn btn-primary my-4 warn-notif" data-form="checkout" data-msg="checkout your orders now..?">
+              <i class="fa fa-cart-arrow-down mr-2"></i>Checkout</a>
+            </form>
+           
+           
+            <button onclick="window.history.back()" class="btn btn-white">Back</button>
           </div>
         </div>
       </div>
@@ -95,7 +101,7 @@
 
       @endif
 
-      <div class="alert bg-gradient-warning {{ (($no_items == null) || ($no_items -> total_price == 0)) ? ' d-block' : ' d-none' }}">
+      <div class="alert bg-gradient-warning mt-4 {{ (($no_items == null) || ($no_items -> total_price == 0)) ? ' d-block' : ' d-none' }}">
         <h3 class="text-white"><i class="fa fa-exclamation-triangle mr-1"></i>Oops...</h3>
         <span class="text-dark">
           No Orders yet...
