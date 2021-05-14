@@ -28,9 +28,11 @@ class HistoryController extends Controller
     }
     
     public function details($id){
-      $orders = Detail_order::where('order_id', $id) ->get();
+      $detail_orders = Detail_order::where('order_id', $id) ->get();
     
-      $status = Order::where('id', $id) ->first() ->status;
-      return view('history/detail', compact('orders', 'status'));
+      $order = Order::where('id', $id) ->first();
+      
+      
+      return view('history/detail', compact('detail_orders', 'order'));
     }
 }

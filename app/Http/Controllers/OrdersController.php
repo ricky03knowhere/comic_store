@@ -49,10 +49,9 @@ class OrdersController extends Controller
     $user_id = Auth::user() ->id;
 
     if (($request ->quantity > $book ->stock)) {
-      
+
       return redirect('order/'.$id) ->with('alert-notif', 'Your order is out of stock');
-    }
-    else if ($request -> quantity == 0) {
+    } else if ($request -> quantity == 0) {
 
       return redirect('order/'.$id) ->with('alert-notif', 'The order cannot be null');
     }
@@ -68,7 +67,7 @@ class OrdersController extends Controller
       $order = new Order;
 
       $order -> user_id = $user_id;
-      $order -> payment_id = mt_rand(100,999);
+      $order -> payment_id = mt_rand(100, 999);
       $order -> date = Carbon::now();
       $order -> status = 0;
       $order -> total_price = 0;
@@ -115,8 +114,8 @@ class OrdersController extends Controller
     $order -> total_price += $book -> price * $request -> quantity;
     $order ->update();
 
-  return redirect('checkout') ->with('notif', 'Order is successfully added to cart');
-}
+    return redirect('checkout') ->with('notif', 'Order is successfully added to cart');
+  }
 
   /**
   * Display the specified resource.
@@ -128,13 +127,13 @@ class OrdersController extends Controller
 
     $order = Order::where('user_id', Auth::user() ->id)
     ->where('status', 0) ->first();
-   $detail_order = [];
+    $detail_order = [];
     if (!empty($order)) {
 
       $detail_order = Detail_order::where('order_id', $order ->id) ->get();
 
     }
-      return view('order/checkout', compact('order','detail_order'));
+    return view('order/checkout', compact('order', 'detail_order'));
 
   }
 
@@ -173,8 +172,7 @@ class OrdersController extends Controller
       $book ->update();
     }
 
-alert() ->success('Success', 'Orders have been confirmed, please complete the payment... ');
-  return redirect('history');
+    return redirect('history/'.$order ->id) ->with('notif', 'Orders have been confirmed.');
   }
 
   /**
@@ -190,11 +188,11 @@ alert() ->success('Success', 'Orders have been confirmed, please complete the pa
     $order = Order::where('id', $detail_order ->order_id) ->first();
 
     $order -> total_price -= $detail_order ->total_price;
-    
+
     $order ->update();
     $detail_order ->delete();
-    
-    return redirect('checkout') ->with('notif','Order has been removed');
+
+    return redirect('checkout') ->with('notif', 'Order has been removed');
 
   }
 }

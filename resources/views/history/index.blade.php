@@ -26,7 +26,7 @@
         </div>
 
         <div class="card-body py-5 px-3">
-          <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right mb-5"><i class="fas fa-plus mr-1"></i> Add Order</a>
+          <a href="{{ url('book') }}" class="btn btn-success btn-sm mb-5"><i class="fas fa-plus mr-1"></i> Add Order</a>
           <div class="table-responsive">
 
             <table class="table table-bordered table-hover">
@@ -73,7 +73,7 @@
 
 
         <div class="text-center mb-3">
-          <a href="{{ url('book') }}" class="btn btn-white ml-auto"><i class="ni ni-shop mr-1"></i>Back to Store</a>
+          <a href="{{ url('book') }}" class="btn btn-white ml-auto"><i class="ni ni-shop mr-2"></i>Back to Store</a>
         </div>
       </div>
 
