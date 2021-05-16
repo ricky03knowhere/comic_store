@@ -63,7 +63,7 @@
       <ul class="navbar-nav" id="sidebar-desk">
         <li class="nav-item">
           <a class="nav-link" href="{{ url('admin/home') }}">
-            <i class="ni ni-tv-2 text-white"></i> {{ __('Dashboard') }}
+            <i class="ni ni-tv-2 text-orange"></i> {{ __('Dashboard') }}
           </a>
         </li>
         <li class="nav-item">
@@ -78,11 +78,11 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('book/list') }}">
-            <i class="ni ni-book-bookmark text-info"></i>Books Collection
+            <i class="ni ni-book-bookmark text-info"></i>Comics Collection
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('user.index') }}">
+          <a class="nav-link" href="{{ url('users/list') }}">
             <i class="fa fa-users text-yellow"></i>Users List
           </a>
         </li>

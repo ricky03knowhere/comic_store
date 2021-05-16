@@ -9,12 +9,11 @@
 <div class="container-fluid mt--6">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-11">
-
       <div class="card table-card bg-secondary shadow mb-6" id="book-list">
 
         <div class="card-header bg-white border-0">
           <h2 class="pt-1">
-            <i class="ni ni-book-bookmark mx-2"></i> Comics Collection
+            <i class="fa fa-users mx-2"></i> Users List
           </h2>
         </div>
 
@@ -31,33 +30,35 @@
                 <tr>
 
                   <th>No.</th>
-                  <th>Cover</th>
-                  <th>Title</th>
-                  <th>Stock</th>
+                  <th>Picture</th>
+                  <th>Email</th>
+                  <th>Name</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody class="align-items-center text-center">
                 @php  $i = 1 @endphp
-                @foreach ($books as $book)
+                @foreach ($users as $user)
                 <tr>
                   <td class="align-middle">{{ $i++ }}</td>
                   <td class="align-middle">
                     <div class="img">
-                      <img src="{{ asset('assets') }}/img/books/{{ $book ->picture }}" alt="404" id="img">
+                      <img src="{{ asset('assets') }}/img/users/{{ $user ->picture }}" alt="404" id="img">
                     </div>
                   </td>
-                  <td class="align-middle">{{ $book -> title }}</td>
-                  <td class="align-middle">{{ $book -> stock }}</td>
+                  <td class="align-middle">{{ $user -> email }}</td>
+                  <td class="align-middle">{{ $user -> name }}</td>
+
+
                   <td class="align-middle">
-                    <a href="{{ url('book/detail', $book ->id) }}"
+                    <a href="{{ url('user/payment', $user ->id) }}"
                       class="btn btn-primary btn-sm info">
-                      <i class="fa fa-info-circle"></i></a>
+                      <i class="fa fa-dollar-sign"></i></a>
 
                     <a href="#!"
-                      class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..." data-form="delete-form">
+                      class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this user data..." data-form="delete-form">
                       <i class="fa fa-trash-alt"></i></a>
-                    <form action="{{ url('book/delete', $book ->id) }}" id="delete-form" method="post">
+                    <form action="{{ url('user/delete', $user ->id) }}" id="delete-form" method="post">
                       @method('delete')
                       @csrf
                     </form>
@@ -80,10 +81,10 @@
 
           <div class="card bg-secondary border-0 mb-0">
             <div class="card-header bg-white">
-              <h3>Add New Book Form</h3>
+              <h3>Add New user Form</h3>
             </div>
             <div class="card-body px-md-4 px-lg-5 py-lg-5">
-              <form role="form" action="{{ url('book/save') }}" method="post" enctype="multipart/form-data">
+              <form role="form" action="{{ url('user/save') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                   <div class="col-md-6">
@@ -91,7 +92,7 @@
                     <div class="form-group mb-3">
                       <div class="input-group input-group-merge input-group-alternative">
                         <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-book-bookmark"></i></span>
+                          <span class="input-group-text"><i class="ni ni-user-bookmark"></i></span>
                         </div>
                         <input class="form-control" placeholder="Title" name="title" required>
                       </div>
@@ -126,7 +127,7 @@
                     <div class="form-group mb-3">
                       <div class="input-group input-group-merge input-group-alternative">
                         <div class="input-group-prepend">
-                          <span class="input-group-text"><i class="ni ni-books"></i></span>
+                          <span class="input-group-text"><i class="ni ni-users"></i></span>
                         </div>
                         <input type="number" class="form-control" placeholder="Quantity" name="stock" required>
                       </div>

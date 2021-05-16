@@ -26,7 +26,7 @@
         </div>
 
         <div class="card-body py-5 px-3">
-          <a href="{{ url('book') }}" class="btn btn-success btn-sm mb-5"><i class="fas fa-plus mr-1"></i> Add Order</a>
+     
           <div class="table-responsive">
 
             <table class="table table-bordered table-hover">

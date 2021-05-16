@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 //use App\Http\Requests\ProfileRequest;
 use Illuminate\Http\Request;
+
+use App\Models\User;
+use App\Models\Order;
+
 use App\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
 
@@ -17,6 +21,15 @@ class ProfileController extends Controller
   public function index() {
     return view('profile.index');
   }
+ 
+  public function users_list() {
+    
+    $users = User::all();
+    $orders = Order::all();
+    
+    return view('profile.user_list', compact('users', 'orders'));
+  }
+  
   public function edit() {
     return view('profile.edit');
   }

@@ -46,6 +46,7 @@ Route::delete('/checkout/remove/{id}', [OrdersController::class, 'remove']) ->na
 Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) ->name('checkout_confirm');
 
 //User Pages
+Route::get('/users/list', [ProfileController::class, 'users_list'])->name('users');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('update');
 Route::get('/profile/details', [ProfileController::class, 'index'])->name('profile');
 Route::get('/profile/edit', [UsersController::class, 'edit'])->name('profile');
