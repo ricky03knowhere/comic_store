@@ -10,6 +10,7 @@ use App\Models\Order;
 
 use App\Http\Requests\PasswordRequest;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB; 
 
 class ProfileController extends Controller
 {
@@ -24,11 +25,21 @@ class ProfileController extends Controller
  
   public function users_list() {
     
-    $users = User::all();
-    $orders = Order::all();
-    
+    $users = DB::table('users') 
+    //->join('orders', 'users.id', 'orders.user_id')
+    -> get();
+
+dd($users);
     return view('profile.user_list', compact('users', 'orders'));
   }
+  
+  
+  public function users_payment() {
+    $user = auth()-> user();
+    
+    return view('profile.payment', compact('user'));
+  }
+  
   
   public function edit() {
     return view('profile.edit');

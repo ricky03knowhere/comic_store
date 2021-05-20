@@ -125,9 +125,13 @@ class OrdersController extends Controller
   */
   public function checkout() {
 
-    $order = Order::where('user_id', Auth::user() ->id)
+    $user = auth() ->user();
+    $order = Order::where('user_id', $user ->id)
     ->where('status', 0) ->first();
+
     $detail_order = [];
+
+
     if (!empty($order)) {
 
       $detail_order = Detail_order::where('order_id', $order ->id) ->get();
@@ -156,22 +160,31 @@ class OrdersController extends Controller
   */
   public function checkout_confirm() {
 
-    $order = Order::where('user_id', Auth::user() ->id)
+    $user = auth() ->user();
+
+    $order = Order::where('user_id', $user ->id)
     ->where('status', 0) ->first();
 
-    $order -> status = 1;
-    $order ->update();
 
-    $detail_orders = Detail_order::where('order_id', $order ->id) ->get();
+    if (empty($user ->address)) {
+      return redirect('profile/edit') ->with('alert-notif', 'Please complete your identity first..');
+    } else if (empty($user ->phone)) {
+      return redirect('profile/edit') ->with('alert-notif', 'Please complete your identity first..');
+    } else {
+      
+      $order -> status = 1;
+      $order ->update();
 
-    foreach ($detail_orders as $d_order) {
+      $detail_orders = Detail_order::where('order_id', $order ->id) ->get();
 
-      $book = Book::where('id', $d_order -> book_id) ->first();
-      $book ->stock -= $d_order ->quantity;
+      foreach ($detail_orders as $d_order) {
 
-      $book ->update();
+        $book = Book::where('id', $d_order -> book_id) ->first();
+        $book ->stock -= $d_order ->quantity;
+
+        $book ->update();
+      }
     }
-
     return redirect('history/'.$order ->id) ->with('notif', 'Orders have been confirmed.');
   }
 

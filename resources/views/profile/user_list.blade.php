@@ -30,9 +30,9 @@
                 <tr>
 
                   <th>No.</th>
-                  <th>Picture</th>
                   <th>Email</th>
                   <th>Name</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -41,12 +41,9 @@
                 @foreach ($users as $user)
                 <tr>
                   <td class="align-middle">{{ $i++ }}</td>
-                  <td class="align-middle">
-                    <div class="img">
-                      <img src="{{ asset('assets') }}/img/users/{{ $user ->picture }}" alt="404" id="img">
-                    </div>
-                  </td>
                   <td class="align-middle">{{ $user -> email }}</td>
+                  <td class="align-middle">{{ $user -> name }}</td>
+               
                   <td class="align-middle">{{ $user -> name }}</td>
 
 
