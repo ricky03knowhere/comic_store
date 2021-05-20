@@ -45,8 +45,14 @@ Route::get('/checkout', [OrdersController::class, 'checkout']) ->name('checkout'
 Route::delete('/checkout/remove/{id}', [OrdersController::class, 'remove']) ->name('remove');
 Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) ->name('checkout_confirm');
 
+//Transaction pages
+Route::get('/transactions/list', [TransactionController::class, 'index']);
+Route::get('/transactions/detail/{id}', [TransactionController::class, 'show']);
+Route::get('/transactions/edit/{id}', [TransactionController::class, 'edit']);
+Route::get('/transactions/update/{id}', [TransactionController::class, 'update']);
+
+
 //User Pages
-Route::get('/user/payment/{id}', [ProfileController::class, 'users_payment'])->name('users');
 Route::get('/users/list', [ProfileController::class, 'users_list'])->name('users');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('update');
 Route::get('/profile/details', [ProfileController::class, 'index'])->name('profile');

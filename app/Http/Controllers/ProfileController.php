@@ -25,19 +25,9 @@ class ProfileController extends Controller
  
   public function users_list() {
     
-    $users = DB::table('users') 
-    //->join('orders', 'users.id', 'orders.user_id')
-    -> get();
+    $users = User::all();
 
-dd($users);
     return view('profile.user_list', compact('users', 'orders'));
-  }
-  
-  
-  public function users_payment() {
-    $user = auth()-> user();
-    
-    return view('profile.payment', compact('user'));
   }
   
   
