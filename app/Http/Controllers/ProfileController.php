@@ -27,7 +27,7 @@ class ProfileController extends Controller
     
     $users = User::all();
 
-    return view('profile.user_list', compact('users', 'orders'));
+    return view('profile.user_list', compact('users'));
   }
   
   

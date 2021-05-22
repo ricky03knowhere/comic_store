@@ -13,14 +13,10 @@
 
         <div class="card-header bg-white border-0">
           <h2 class="pt-1">
-            <i class="fa fa-users mx-2"></i> Users List
+            <i class="fa fa-hand-holding-usd mx-2"></i> Transactions /
+            <i class="fa fa-list mx-2"></i> List
           </h2>
         </div>
-
-        <button type="button" class="btn btn-primary mt-4 btn-add badge-pill d-flex float-right"
-          data-toggle="modal" data-target="#modal-form"><i class="fas fa-plus mr-2"></i>Add Comic</button>
-        <div class="card-body py-5 px-3">
-
 
 
           <div class="table-responsive">
@@ -30,39 +26,42 @@
                 <tr>
 
                   <th>No.</th>
+                  <th>Date</th>
                   <th>Email</th>
-                  <th>Name</th>
+                  <th>Nominal</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody class="align-items-center text-center">
                 @php  $i = 1 @endphp
-                @foreach ($users as $user)
+                @foreach ($orders as $order)
                 <tr>
                   <td class="align-middle">{{ $i++ }}</td>
-                  <td class="align-middle">{{ $user -> email }}</td>
-                  <td class="align-middle">{{ $user -> name }}</td>
+                  <td class="align-middle">{{ $order -> date }}</td>
+                  <td class="align-middle">{{ $order -> email }}</td>
+                  <td class="align-middle">Rp. {{ number_format($order -> total_price) }}</td>
                
-                  <td class="align-middle">{{ $user -> name }}</td>
+                  <td class="align-middle">
+                    
+                      @if($order ->status == 1)
+                  <span class="badge badge-pill badge-success"><i class="fa fa-check-circle mr-1"></i> Paid</span>
+                  @else
+                  <span class="badge badge-pill badge-danger"><i class="fa fa-close-circle mr-1"></i> Unpaid</span>
+                  @endif
+
+                  </td>
 
 
                   <td class="align-middle">
-                    <a href="{{ url('user/history', $user ->id) }}"
-                      class="btn btn-warning btn-sm info">
-                      <i class="fa fa-dollar-sign"></i></a>
-                
-                    <a href="{{ url('user/details', $user ->id) }}"
+                    <a href=" {{ url('transaction/edit', '$order ->id') }}"
+                      class="btn btn-warning btn-sm">
+                      <i class="fa fa-edit"></i></a>
+                  
+                    <a href="{{ url('history/details', $order ->id) }}"
                       class="btn btn-primary btn-sm info">
                       <i class="fa fa-info-circle"></i></a>
 
-                    <a href="#!"
-                      class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this user data..." data-form="delete-form">
-                      <i class="fa fa-trash-alt"></i></a>
-                    <form action="{{ url('user/delete', $user ->id) }}" id="delete-form" method="post">
-                      @method('delete')
-                      @csrf
-                    </form>
                   </td>
                 </tr>
                 @endforeach
@@ -72,7 +71,7 @@
           </div>
         </div>
       </div>
-    </div>
+  
   </div>
 
   @include('layouts.footers.auth')

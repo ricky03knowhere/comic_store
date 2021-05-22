@@ -7,6 +7,7 @@ use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TransactionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

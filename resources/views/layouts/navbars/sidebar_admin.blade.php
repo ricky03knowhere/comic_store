@@ -63,16 +63,16 @@
       <ul class="navbar-nav" id="sidebar-desk">
         <li class="nav-item">
           <a class="nav-link" href="{{ url('admin/home') }}">
-            <i class="ni ni-tv-2 text-orange"></i> {{ __('Dashboard') }}
+            <i class="ni ni-tv-2 text-yellow"></i> {{ __('Dashboard') }}
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('book/') }}">
-            <i class="ni ni-shop text-orange"></i>Store
+            <i class="ni ni-shop" style="color: #e861ff"></i>Store
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('profile.edit') }}">
+          <a class="nav-link" href="{{ url('transactions/list') }}">
             <i class="fa fa-hand-holding-usd text-green"></i>Transactions
           </a>
         </li>
@@ -83,7 +83,7 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ url('users/list') }}">
-            <i class="fa fa-users text-yellow"></i>Users List
+            <i class="fa fa-users text-orange"></i>Users List
           </a>
         </li>
      </ul>
