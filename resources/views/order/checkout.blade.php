@@ -56,12 +56,12 @@
                 ?>
                 @foreach($detail_order as $order)
                 <tr>
-                  <td>{{ $i++ }}</td>
-                  <td>{{ $order -> book -> title }}</td>
-                  <td>Rp. {{ number_format($order -> book -> price) }}</td>
-                  <td>{{ $order -> quantity }}</td>
-                  <td>Rp. {{ number_format($order -> total_price) }}</td>
-                  <td>
+                  <td class="align-middle">{{ $i++ }}</td>
+                  <td class="align-middle">{{ $order -> book -> title }}</td>
+                  <td class="align-middle">Rp. {{ number_format($order -> book -> price) }}</td>
+                  <td class="align-middle">{{ $order -> quantity }}</td>
+                  <td class="align-middle">Rp. {{ number_format($order -> total_price) }}</td>
+                  <td class="align-middle">
                     <form action="{{ url('checkout/remove',[$order -> id]) }}" method="post" id="remove-order">
                       @csrf
                       {{ method_field('DELETE') }}
@@ -75,22 +75,22 @@
                 @endforeach
                 @if(!empty($order))
                 <tr>
-                  <th colspan="4">Total Price</th>
-                  <td>
+                  <th colspan="4">Total Pay</th>
+                  <th>
                     Rp. {{ number_format($order -> order -> total_price) }}
-                  </td>
+                  </th>
                 </tr>
                 @endif
               </tbody>
             </table>
           </div>
 
-          <div class="text-center">
+          <div class="text-center pt-6">
               <form action="{{ url('checkout/confirm') }}" id="checkout">
                       @csrf
-            <button type="submit" class="btn btn-primary my-4 warn-notif" data-form="checkout" data-msg="checkout your orders now..?">
-              <i class="fa fa-cart-arrow-down mr-2"></i>Checkout</a>
             </form>
+            <button type="submit" class="btn btn-primary warn-notif" data-form="checkout" data-msg="checkout your orders now..?">
+              <i class="fa fa-cart-arrow-down mr-2"></i>Checkout</button>
            
            
             <button onclick="window.history.back()" class="btn btn-white">Back</button>

@@ -17,10 +17,10 @@ class TransactionController extends Controller
     return view('transaction.index', compact('orders'));
   }
 
-  public function payment() {
-    $user = auth()-> user();
+  public function show() {
+    $user = ;
     
-    return view('transaction.payment', compact('user'));
+    return view('transaction.details', compact('user'));
   }
 
 }

@@ -20,8 +20,8 @@
           </h2>
         </div>
 
-        <div class="card-body pt-4 pb-6 px-3" id="order">
-          <div class="row">
+        <div class="card-body py-5 px-3" id="order">
+          <div class="row justify-content-center">
             <div class="col-md-5 mb-2">
               <!--<img src="assets/img/pict.jpg" alt="404" class="img-thumbnail rounded">-->
               <img src="{{ asset('assets/img/books').'/'.$book ->picture }}" alt="404" class="img-thumbnail rounded">
@@ -66,7 +66,7 @@
 
             </div>
             <p class="text-justify synopsis">
-              <h4><i class="ni ni-single-copy-04"></i>Synopsis :</h4><br>
+              <h4><i class="ni ni-single-copy-04 mr-2"></i>Synopsis :</h4><br>
               <span>
                 {{ $book -> desc }}
               </span>
@@ -75,7 +75,7 @@
 
           </div>
 
-          <div class="text-center pb-3">
+          <div class="text-center mb-5 mt-2">
             <button type="submit" class="btn btn-primary"><i class="fa fa-cart-plus mr-1"></i> Add to cart</button>
           </form>
           <button onclick="window.history.back()" class="btn btn-white ml-auto">Back</button>
