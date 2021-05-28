@@ -49,8 +49,8 @@ class ProfileController extends Controller
     }
     
     $user = auth()-> user();
-    $old_pict = $user-> picture;
-
+    $old_pict = $user;
+// dd($old_pict);
     $picture = $request ->picture;
 
     $picture_save = '';

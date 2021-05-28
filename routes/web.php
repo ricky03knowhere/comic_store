@@ -48,7 +48,7 @@ Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) -
 
 //Transaction pages
 Route::get('/transactions/list', [TransactionController::class, 'index']);
-Route::get('/transactions/detail/{id}', [TransactionController::class, 'show']);
+Route::get('/transactions/details/{id}', [TransactionController::class, 'show']);
 Route::get('/transactions/edit/{id}', [TransactionController::class, 'edit']);
 Route::get('/transactions/update/{id}', [TransactionController::class, 'update']);
 

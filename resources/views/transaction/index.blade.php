@@ -56,11 +56,11 @@
 
 
                     <td class="align-middle">
-                      <a href=" {{ url('transaction/edit', '$order ->id') }}"
+                      <a href=" {{ url('transactions/edit', '$order ->id') }}"
                         class="btn btn-warning btn-sm">
                         <i class="fa fa-edit"></i></a>
                     
-                      <a href="{{ url('history/details', $order ->id) }}"
+                      <a href="{{ url('transactions/details', $order ->id) }}"
                         class="btn btn-primary btn-sm info">
                         <i class="fa fa-info-circle"></i></a>
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Detail_order;
+use App\Models\Order;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
 
@@ -17,10 +20,13 @@ class TransactionController extends Controller
     return view('transaction.index', compact('orders'));
   }
 
-  public function show() {
-    $user = ;
+  public function show($id){
+      $detail_orders = Detail_order::where('order_id', $id) ->get();
     
-    return view('transaction.details', compact('user'));
-  }
+      $order = Order::where('id', $id) ->first();
+      
+      
+      return view('transaction.details', compact('detail_orders', 'order'));
+    }
 
 }

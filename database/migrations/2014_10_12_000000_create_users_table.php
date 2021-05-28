@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->boolean('is_admin')->nullable();
             $table->string('address') ->nullable();
             $table->string('phone') ->nullable();
-            $table->string('picture') ->nullable();
+            $table->string('picture') ->default('default.png');
             $table->rememberToken();
             $table->timestamps();
         });
