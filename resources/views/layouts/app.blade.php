@@ -77,10 +77,10 @@
   <script src="{{ asset('assets')}}/js/script.js"></script>
   <script src="{{ asset('assets')}}/js/confirm.js"></script>
  
-  @if (getenv('APP_ENV') === 'local')
+  <!-- @if (getenv('APP_ENV') === 'local')
   <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3004/browser-sync/browser-sync-client.js?v=2.26.14'><\/script>".replace("HOST", location.hostname));
 //]]></script>
-  @endif
+  @endif -->
 </body>
 </html>

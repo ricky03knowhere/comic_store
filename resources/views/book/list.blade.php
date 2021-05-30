@@ -6,6 +6,7 @@
 @if(session('notif'))
 <div id="notif" data-notif="{{ session('notif') }}"></div>
 @endif
+
 <div class="container-fluid mt--6">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-11">
@@ -18,8 +19,8 @@
           </h2>
         </div>
 
-        <button type="button" class="btn btn-primary mt-4 btn-add badge-pill d-flex float-right"
-          data-toggle="modal" data-target="#modal-form"><i class="fas fa-plus mr-2"></i>Add Comic</button>
+        <button type="button" class="btn btn-primary mt-4 btn-add badge-pill d-flex float-right" data-toggle="modal"
+          data-target="#modal-form"><i class="fas fa-plus mr-2"></i>Add Comic</button>
         <div class="card-body py-5 px-3">
 
 
@@ -38,7 +39,7 @@
                 </tr>
               </thead>
               <tbody class="align-items-center text-center">
-                @php  $i = 1 @endphp
+                @php $i = 1 @endphp
                 @foreach ($books as $book)
                 <tr>
                   <td class="align-middle">{{ $i++ }}</td>
@@ -50,12 +51,11 @@
                   <td class="align-middle">{{ $book -> title }}</td>
                   <td class="align-middle">{{ $book -> stock }}</td>
                   <td class="align-middle">
-                    <a href="{{ url('book/detail', $book ->id) }}"
-                      class="btn btn-primary btn-sm info">
+                    <a href="{{ url('book/detail', $book ->id) }}" class="btn btn-primary btn-sm info">
                       <i class="fa fa-info-circle"></i></a>
 
-                    <a href="#!"
-                      class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..." data-form="delete-form">
+                    <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..."
+                      data-form="delete-form">
                       <i class="fa fa-trash-alt"></i></a>
                     <form action="{{ url('book/delete', $book ->id) }}" id="delete-form" method="post">
                       @method('delete')
@@ -151,7 +151,8 @@
                       <span class="input-group-text"><i class="ni ni-collection"></i></span>
                     </div>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture" required>
+                      <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture"
+                        required>
                       <label class="custom-file-label" for="customFileLang">Select cover picture</label>
                     </div>
                   </div>
