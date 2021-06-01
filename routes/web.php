@@ -47,10 +47,10 @@ Route::delete('/checkout/remove/{id}', [OrdersController::class, 'remove']) ->na
 Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) ->name('checkout_confirm');
 
 //Transaction pages
-Route::get('/transactions/list', [TransactionController::class, 'index']);
-Route::get('/transactions/details/{id}', [TransactionController::class, 'show']);
-Route::get('/transactions/edit/{id}', [TransactionController::class, 'edit']);
-Route::get('/transactions/update/{id}', [TransactionController::class, 'update']);
+Route::get('/transactions/list', [TransactionController::class, 'index']) ->name('transactions');
+Route::get('/transactions/details/{id}', [TransactionController::class, 'show']) ->name('transactions');
+Route::get('/transactions/edit/{id}', [TransactionController::class, 'edit']) ->name('transactions');
+Route::get('/transactions/update/{id}', [TransactionController::class, 'update']) ->name('transactions');
 
 
 //User Pages
@@ -78,4 +78,3 @@ Route::group(['middleware' => 'auth'], function () {
 	 Route::get('table-list', function () {return view('pages.tables');})->name('table');
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
-

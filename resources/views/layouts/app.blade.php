@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -36,7 +37,14 @@
   <!--Owl Carousel JS-->
   <script src="{{ asset('assets')}}/js/owl.carousel.min.js"></script>
 
+
+  <!-- Bootstrap Toggle CSS -->
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+    rel="stylesheet" />
+
+  <title>Document</title>
 </head>
+
 <body class="{{ $class ?? '' }}">
   @auth()
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -73,14 +81,19 @@
   <!--SweetAlert JS-->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+  <!-- Bootstrap Toggle JS -->
+  <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
   <!--Custom JS-->
   <script src="{{ asset('assets')}}/js/script.js"></script>
   <script src="{{ asset('assets')}}/js/confirm.js"></script>
- 
+
+
   <!-- @if (getenv('APP_ENV') === 'local')
   <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3004/browser-sync/browser-sync-client.js?v=2.26.14'><\/script>".replace("HOST", location.hostname));
 //]]></script>
   @endif -->
 </body>
+
 </html>

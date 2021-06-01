@@ -190,4 +190,8 @@
   text-align: justify;
 }
 
+#toggle-paid .toggle.ios, #toggle-paid .toggle-on.ios, #toggle-paid .toggle-off.ios, #toggle-paid .toggle.ios .toggle-handle {
+  border-radius: 20rem;
+}
+
 /*# sourceMappingURL=style.css.map */

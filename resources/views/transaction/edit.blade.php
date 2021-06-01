@@ -13,7 +13,6 @@
 
 
       <div class="card table-card bg-secondary shadow mb-6">
-
         <div class="card-header bg-white border-0">
           <h2 class="pt-1">
             <i class="fas fa-hand-holding-usd mx-2"></i> Transactions /
@@ -24,7 +23,7 @@
 
         <div class="card-body py-5 px-3">
 
-          <div class="table-responsive">
+          <div class="table-responsive" id="toggle-paid">
 
             <table class="table table-bordered table-hover">
               <thead class="bg-primary text-white text-center">
@@ -46,13 +45,13 @@
                   <td>
 
                     @if($order ->status == 1)
-                    <label class="custom-toggle">
-                      <input type="checkbox" checked>
-                      <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes"></span>
-                    </label>
+                    <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-size="sm" data-on="✔ PAID"
+                      data-off="UNPAID" data-onstyle="success" data-offstyle="danger" />
 
                     @else
-                    <span class="badge badge-pill badge-danger"><i class="fa fa-close-circle mr-1"></i> Unpaid</span>
+                    <input type="checkbox" data-toggle="toggle" data-style="ios" data-size="sm" data-on="✔ PAID"
+                      data-off="UNPAID" data-onstyle="success" data-offstyle="danger" />
+
                     @endif
                   </td>
                 </tr>
@@ -63,7 +62,7 @@
         </div>
 
 
-        <div class="text-center mb-3">
+        <div class=" text-center mb-3">
           <button onclick="window.history.back()" class="btn btn-white">Back</button>
         </div>
       </div>
