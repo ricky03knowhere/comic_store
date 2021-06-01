@@ -25,7 +25,7 @@ class TransactionController extends Controller
     
       $order =  DB::table('orders') ->where('orders.id', $id)
       ->join('users', 'users.id', 'orders.user_id')
-       ->first();
+      ->first();
       
       
       return view('transaction.details', compact('detail_orders', 'order'));
@@ -40,5 +40,17 @@ class TransactionController extends Controller
         
         return view('transaction.edit', compact('order'));
 
+      }
+
+      public function update(Request $request, $id){
+
+        $order = Order::where('id', $id) ->first();
+        
+        
+        $order -> status = 2;
+
+        $order ->update();
+
+        return redirect('transactions/edit/'.$order ->id) ->with('notif', 'Transaction updated successfully');
       }
 }

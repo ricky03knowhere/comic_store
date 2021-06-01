@@ -1,8 +1,9 @@
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-default sticky-top" id="sidenav-main">
   <div class="container-fluid">
     <!-- Toggler -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" ></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidenav-collapse-main"
+      aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Brand -->
     <a class="navbar-brand pt-0" href="{{ route('home') }}">
@@ -20,9 +21,10 @@
         </a>
         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
           <div class=" dropdown-header noti-title">
-            <h6 class="text-overflow m-0 text-capitalize">{{ Auth::user() ->name }}
-             <span class="badge badge-pill badge-primary ml-2">Administrator</span>
-            </h6>
+            <h5 class="text-overflow m-0 text-capitalize">
+              <span class="d-block d-sm-none"> {{ Auth::user() ->name }} </span>
+              <span class="badge badge-pill badge-primary ml-2">Administrator</span>
+            </h5>
           </div>
           <a href="{{ url('profile/details') }}" class="dropdown-item">
             <i class="ni ni-single-02"></i>
@@ -33,7 +35,8 @@
             <span>Edit Profile</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="{{ route('logout') }}" class="dropdown-item btn-logout warn-notif" data-msg="leave this page..." data-form="logout-form">
+          <a href="{{ route('logout') }}" class="dropdown-item btn-logout warn-notif" data-msg="leave this page..."
+            data-form="logout-form">
             <i class="ni ni-user-run"></i>
             <span>{{ __('Logout') }}</span>
           </a>
@@ -51,7 +54,8 @@
             </a>
           </div>
           <div class="col-6 collapse-close">
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#sidenav-collapse-main"
+              aria-controls="sidenav-main" aria-expanded="false" aria-label="Toggle sidenav">
               <span></span>
               <span></span>
             </button>
@@ -86,7 +90,7 @@
             <i class="fa fa-users text-orange"></i>Users List
           </a>
         </li>
-     </ul>
-      </div>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

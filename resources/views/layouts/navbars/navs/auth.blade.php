@@ -29,13 +29,16 @@
         </a>
         <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
           <div class=" dropdown-header noti-title">
-            <h6 class="text-overflow m-0 text-capitalize">{{ Auth::user() ->name }}
+            <h5 class="text-overflow m-0 text-capitalize">
+              <span class="d-block d-sm-none"> {{ Auth::user() ->name }} </span>
+
               @if(Auth::user() ->is_admin == 1)
               <span class="badge badge-pill badge-primary ml-2">Administrator</span>
               @else
               <span class="badge badge-pill badge-success ml-2">Customer</span>
               @endif
-            </h6>
+            </h5>
+
           </div>
           <a href="{{ url('profile/details') }}" class="dropdown-item">
             <i class="ni ni-single-02"></i>
@@ -46,14 +49,15 @@
             <span>Edit Profile</span>
           </a>
           <div class="dropdown-divider"></div>
-     
-          <a href="#!" class="dropdown-item btn-logout warn-notif" data-msg="leave this page..." data-form="logout-form">
+
+          <a href="#!" class="dropdown-item btn-logout warn-notif" data-msg="leave this page..."
+            data-form="logout-form">
             <i class="ni ni-user-run"></i>
             <span>{{ __('Logout') }}</span>
           </a>
-<form action="{{ route('logout') }}" id="logout-form" method="post">
-  @csrf
-</form>
+          <form action="{{ route('logout') }}" id="logout-form" method="post">
+            @csrf
+          </form>
         </div>
       </li>
     </ul>

@@ -50,7 +50,7 @@ Route::get('/checkout/confirm', [OrdersController::class, 'checkout_confirm']) -
 Route::get('/transactions/list', [TransactionController::class, 'index']) ->name('transactions');
 Route::get('/transactions/details/{id}', [TransactionController::class, 'show']) ->name('transactions');
 Route::get('/transactions/edit/{id}', [TransactionController::class, 'edit']) ->name('transactions');
-Route::get('/transactions/update/{id}', [TransactionController::class, 'update']) ->name('transactions');
+Route::post('/transactions/update/{id}', [TransactionController::class, 'update']) ->name('transactions');
 
 
 //User Pages

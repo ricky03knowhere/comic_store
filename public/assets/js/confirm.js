@@ -61,3 +61,13 @@ $('.warn-notif').on('click', function (e) {
     }
   })
 })
+
+
+// Toggle Paid Handler
+
+$('#toggle-paid .toggler').on('change', () => {
+  
+  // this.value = this.checked ? '1' : '2'
+  // alert(this.value)
+  $('#toggle-paid-form').submit()
+})

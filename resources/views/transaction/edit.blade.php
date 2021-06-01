@@ -44,15 +44,21 @@
                   <td>Rp. {{ number_format($order ->total_price + $order ->payment_id) }}</td>
                   <td>
 
-                    @if($order ->status == 1)
-                    <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-size="sm" data-on="✔ PAID"
-                      data-off="UNPAID" data-onstyle="success" data-offstyle="danger" />
+                    <form action="{{ url('transactions/update', $order ->id) }}" id="toggle-paid-form" method="post">
+                      @csrf
 
-                    @else
-                    <input type="checkbox" data-toggle="toggle" data-style="ios" data-size="sm" data-on="✔ PAID"
-                      data-off="UNPAID" data-onstyle="success" data-offstyle="danger" />
+                      @if($order ->status == 1)
+                      <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-size="sm"
+                        data-on="✔ PAID" data-off="UNPAID" data-onstyle="success" data-offstyle="danger" class="toggler"
+                        name="status" value="2" />
 
-                    @endif
+                      @else
+                      <input type="checkbox" data-toggle="toggle" data-style="ios" data-size="sm" data-on="✔ PAID"
+                        data-off="UNPAID" data-onstyle="success" data-offstyle="danger" class="toggler" name="status"
+                        value="1" />
+
+                      @endif
+                    </form>
                   </td>
                 </tr>
               </tbody>
