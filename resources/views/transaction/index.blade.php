@@ -43,10 +43,10 @@
 
                   <td class="align-middle">
 
-                    @if($order ->status != 1)
-                    <span class="badge badge-pill badge-danger"><i class="fa fa-close-circle mr-1"></i> Unpaid</span>
-                    @else
+                    @if($order ->status == 1)
                     <span class="badge badge-pill badge-success"><i class="fa fa-check-circle mr-1"></i> Paid</span>
+                    @else
+                    <span class="badge badge-pill badge-danger"><i class="fa fa-close-circle mr-1"></i> Unpaid</span>
                     @endif
 
                   </td>

@@ -7,7 +7,7 @@
     <div class="col-md-12 col-lg-11">
 
 
-      <div class="card table-card bg-secondary shadow mb-6">
+      <div class="card table-card bg-secondary shadow mb-6" id="tag-details">
 
         <div class="card-header bg-white border-0">
           <h2 class="pt-1">
@@ -19,18 +19,20 @@
 
         <div class="card-body py-5 px-3">
 
-          <div class="user-info text-right mr-xl-6 mr-xs-2">
-            <h3>
-              <i class="fas fa-user mr-2"></i><b> Name : {{ $order ->name }}</b>
-            </h3>
-            <h3>
-              <i class="fas fa-envelope mr-2"></i> Email : {{ $order ->email }}
-            </h3>
+          <div class="user-info mr-xl-6 mr-xs-2 mb-5">
+            <div class="tag-name">
+              <h4>
+                <i class="fas fa-user mr-2"></i><b> Name : {{ $order ->name }}</b>
+              </h4>
+              <h4>
+                <i class="fas fa-envelope mr-2"></i><b> Email : {{ $order ->email }}</b>
+              </h4>
+            </div>
           </div>
 
-          <span class="badge badge-pill bg-yellow mb-4">
-            <i class="ni ni-calendar-grid-58 mr-2"></i>
-            Order Date : {{ $order ->date }}
+          <span class="badge badge-pill bg-yellow mb-4" style="font-size: 0.8rem; text-transform: capitalize">
+            <b><i class="ni ni-calendar-grid-58 mr-2"></i>
+              Order Date : {{ $order ->date }}</b>
           </span>
 
           <div class="table-responsive">

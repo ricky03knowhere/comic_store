@@ -33,24 +33,23 @@ class TransactionController extends Controller
 
       public function edit($id){
         // $detail_orders = Detail_order::where('order_id', $id) ->get();
-      
-        $order =  DB::table('orders') ->where('orders.id', $id)
+      $order =  DB::table('orders') ->where('orders.id', $id)
         ->join('users', 'users.id', 'orders.user_id')
+        ->select('orders.id', 'users.email', 'users.name', 'orders.total_price', 'orders.payment_id', 'orders.status')
         ->first();
-        
+
         return view('transaction.edit', compact('order'));
 
       }
 
-      public function update(Request $request, $id){
-
+      public function update($id){
         $order = Order::where('id', $id) ->first();
         
-        
-        $order -> status = 2;
+        $status = (($order -> status) == 1) ? 0 : 1;
+        $order -> status = $status;
 
         $order ->update();
 
-        return redirect('transactions/edit/'.$order ->id) ->with('notif', 'Transaction updated successfully');
+        return redirect('transactions/edit/'.$id) ->with('notif', 'Transaction updated successfully');
       }
 }

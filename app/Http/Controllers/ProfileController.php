@@ -49,7 +49,7 @@ class ProfileController extends Controller
     }
     
     $user = auth()-> user();
-    $old_pict = $user;
+    $old_pict = $user ->picture;
 // dd($old_pict);
     $picture = $request ->picture;
 
@@ -63,7 +63,8 @@ class ProfileController extends Controller
       } else {
         $picture_save = $old_pict;
       }
-      $picture ->move(public_path().'/assets/img/users/', $picture_save);
+
+      $picture ->move(public_path().'\\assets\\img\\users\\', $picture_save);
     }
 
 

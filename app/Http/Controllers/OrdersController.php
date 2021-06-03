@@ -172,7 +172,6 @@ class OrdersController extends Controller
       return redirect('profile/edit') ->with('alert-notif', 'Please complete your identity first..');
     } else {
       
-      $order -> status = 1;
       $order ->update();
 
       $detail_orders = Detail_order::where('order_id', $order ->id) ->get();

@@ -35,7 +35,8 @@
 
         <div class="card-body py-5 px-3">
 
-          <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right mb-5"><i class="fas fa-plus mr-1"></i> Add Order</a>
+          <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right mb-5"><i class="fas fa-plus mr-1"></i>
+            Add Order</a>
 
           <div class="table-responsive">
 
@@ -52,7 +53,6 @@
                 <?php
                 $i = 1;
                 $order_item = true;
-
                 ?>
                 @foreach($detail_order as $order)
                 <tr>
@@ -65,15 +65,15 @@
                     <form action="{{ url('checkout/remove',[$order -> id]) }}" method="post" id="remove-order">
                       @csrf
                       {{ method_field('DELETE') }}
-                      <button class="btn btn-danger btn-sm delete-order warn-notif"
-                        data-msg="remove this order..?" data-form="remove-order">
+                      <button class="btn btn-danger btn-sm delete-order warn-notif" data-msg="remove this order..?"
+                        data-form="remove-order">
                         <i class="fas fa-trash mr-1"></i>Remove</button>
 
                     </form>
                   </td>
                 </tr>
                 @endforeach
-                @if(!empty($order))
+                @if(($no_items == null) || ($no_items -> total_price == 0))
                 <tr>
                   <th colspan="4">Total Pay</th>
                   <th>
@@ -86,13 +86,14 @@
           </div>
 
           <div class="text-center pt-6">
-              <form action="{{ url('checkout/confirm') }}" id="checkout">
-                      @csrf
+            <form action="{{ url('checkout/confirm') }}" id="checkout">
+              @csrf
             </form>
-            <button type="submit" class="btn btn-primary warn-notif" data-form="checkout" data-msg="checkout your orders now..?">
+            <button type="submit" class="btn btn-primary warn-notif" data-form="checkout"
+              data-msg="checkout your orders now..?">
               <i class="fa fa-cart-arrow-down mr-2"></i>Checkout</button>
-           
-           
+
+
             <button onclick="window.history.back()" class="btn btn-white">Back</button>
           </div>
         </div>
@@ -101,13 +102,15 @@
 
       @endif
 
-      <div class="alert bg-gradient-warning mt-4 {{ (($no_items == null) || ($no_items -> total_price == 0)) ? ' d-block' : ' d-none' }}">
+      <div
+        class="alert bg-gradient-warning mt-4 {{ (($no_items == null) || ($no_items -> total_price == 0)) ? ' d-block' : ' d-none' }}">
         <h3 class="text-white"><i class="fa fa-exclamation-triangle mr-1"></i>Oops...</h3>
         <span class="text-dark">
           No Orders yet...
 
         </span>
-        <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right"><i class="fa fa-shopping-cart mr-1"></i>Order Now</a>
+        <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right"><i
+            class="fa fa-shopping-cart mr-1"></i>Order Now</a>
       </div>
 
     </div>

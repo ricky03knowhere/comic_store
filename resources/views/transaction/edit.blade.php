@@ -50,12 +50,11 @@
                       @if($order ->status == 1)
                       <input type="checkbox" checked data-toggle="toggle" data-style="ios" data-size="sm"
                         data-on="✔ PAID" data-off="UNPAID" data-onstyle="success" data-offstyle="danger" class="toggler"
-                        name="status" value="2" />
+                        name="status" />
 
                       @else
                       <input type="checkbox" data-toggle="toggle" data-style="ios" data-size="sm" data-on="✔ PAID"
-                        data-off="UNPAID" data-onstyle="success" data-offstyle="danger" class="toggler" name="status"
-                        value="1" />
+                        data-off="UNPAID" data-onstyle="success" data-offstyle="danger" class="toggler" name="status" />
 
                       @endif
                     </form>
@@ -69,7 +68,7 @@
 
 
         <div class=" text-center mb-3">
-          <button onclick="window.history.back()" class="btn btn-white">Back</button>
+          <a href="{{ url('transactions/list') }}" class="btn btn-white">Back</a>
         </div>
       </div>
 

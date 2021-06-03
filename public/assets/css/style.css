@@ -194,4 +194,9 @@
   border-radius: 20rem;
 }
 
+#tag-details .user-info {
+  display: flex;
+  justify-content: flex-end;
+}
+
 /*# sourceMappingURL=style.css.map */
