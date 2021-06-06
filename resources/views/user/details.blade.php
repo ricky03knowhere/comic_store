@@ -40,8 +40,8 @@
               <i class="ni ni-pin-3 mr-2"></i>{{ $user ->address }}
             </div>
           </div>
-          <button onclick="window.history.back()" class="btn btn-default badge-pill float-right mt-5 mb-3">
-            <i class="fas fa-edit mr-1"></i>Back
+          <button onclick="window.history.back()" class="btn btn-sm btn-default badge-pill float-right mt-5 mb-3">
+            <i class="fa fa-backward"></i>Back
           </button>
         </div>
       </div>

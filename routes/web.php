@@ -54,9 +54,9 @@ Route::post('/transactions/update/{id}', [TransactionController::class, 'update'
 
 //User Pages
 Route::get('/users/list', [UsersController::class, 'index'])->name('users');
-Route::get('/users/history/{id}', [UsersController::class, 'history'])->name('users');
-Route::get('/users/details/{id}', [UsersController::class, 'show'])->name('users');
-Route::delete('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users');
+Route::get('/user/history/{id}', [UsersController::class, 'history'])->name('users');
+Route::get('/user/details/{id}', [UsersController::class, 'show'])->name('users');
+Route::delete('/user/delete/{id}', [UsersController::class, 'destroy'])->name('users');
 
 
 //User Guest Pages

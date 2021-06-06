@@ -26,9 +26,9 @@
                 <tr>
 
                   <th>No.</th>
+                  <th>Picture</th>
                   <th>Email</th>
                   <th>Name</th>
-                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -36,27 +36,31 @@
                 @php $i = 1 @endphp
                 @foreach ($users as $user)
                 <tr>
-                  <td>{{ $i++ }}</td>
-                  <td>{{ $user -> email }}</td>
-                  <td>{{ $user -> name }}</td>
+                  <td class="align-middle">{{ $i++ }}</td>
+                  <td class="align-middle">
+                    <div class="img">
+                      <img src="{{ asset('assets/img/users').'/'.$user ->picture }}" alt="404">
+                    </div>
+                  </td>
+                  <td class="align-middle">{{ $user -> email }}</td>
+                  <td class="align-middle">{{ $user -> name }}</td>
 
-                  <td>{{ $user -> name }}</td>
+                  <td class="align-middle">
+                    <div class="text-justify">
+                      <a href=" {{ url('user/history', $user ->id) }}" class="btn btn-info btn-sm info">
+                        <i class="fa fa-history"></i></a>
 
+                      <a href="{{ url('user/details', $user ->id) }}" class="btn btn-primary btn-sm info">
+                        <i class="fa fa-info-circle"></i></a>
 
-                  <td class="justify-content-center">
-                    <a href="{{ url('user/history', $user ->id) }}" class="btn btn-info btn-sm info">
-                      <i class="fa fa-history"></i></a>
-
-                    <a href="{{ url('user/details', $user ->id) }}" class="btn btn-primary btn-sm info">
-                      <i class="fa fa-info-circle"></i></a>
-
-                    <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this user data..."
-                      data-form="delete-form">
-                      <i class="fa fa-trash-alt"></i></a>
-                    <form action="{{ url('user/delete', $user ->id) }}" id="delete-form" method="post">
-                      @method('delete')
-                      @csrf
-                    </form>
+                      <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this user data..."
+                        data-form="delete-form">
+                        <i class="fa fa-trash-alt"></i></a>
+                      <form action="{{ url('user/delete', $user ->id) }}" id="delete-form" method="post">
+                        @method('delete')
+                        @csrf
+                      </form>
+                    </div>
                   </td>
                 </tr>
                 @endforeach

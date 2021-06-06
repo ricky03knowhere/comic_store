@@ -38,19 +38,19 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="text-center">
                 @php $i = 1 @endphp
                 @foreach ($books as $book)
                 <tr>
-                  <td>{{ $i++ }}</td>
-                  <td>
-                    <div class="img align-items-center">
+                  <td class="align-middle">{{ $i++ }}</td>
+                  <td class="align-middle">
+                    <div class="img">
                       <img src="{{ asset('assets') }}/img/books/{{ $book ->picture }}" alt="404" id="img">
                     </div>
                   </td>
-                  <td>{{ $book -> title }}</td>
-                  <td>{{ $book -> stock }}</td>
-                  <td>
+                  <td class="align-middle">{{ $book -> title }}</td>
+                  <td class="align-middle">{{ $book -> stock }}</td>
+                  <td class="align-middle">
                     <a href="{{ url('book/detail', $book ->id) }}" class="btn btn-primary btn-sm info">
                       <i class="fa fa-info-circle"></i></a>
 

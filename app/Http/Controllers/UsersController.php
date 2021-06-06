@@ -49,8 +49,8 @@ class UsersController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function show($id) {
-    $user = User::where('id', $id);
-
+    $user = User::where('id', $id) ->first();
+    
     return view('user.details', compact('user'));
   }
 
