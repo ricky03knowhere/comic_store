@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use App\Models\User;
 use Auth;
@@ -15,9 +16,11 @@ class UsersController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function index() {
-    $user = User::where('id', Auth::user() -> id) ->first();
 
-    return view('user/index', compact('user'));
+      $users = User::all();
+  
+      return view('user.index', compact('users'));
+    
   }
 
   /**
@@ -46,7 +49,9 @@ class UsersController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function show($id) {
-    //
+    $user = User::where('id', $id);
+
+    return view('user.details', compact('user'));
   }
 
   /**

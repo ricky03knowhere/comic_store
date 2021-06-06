@@ -59,11 +59,6 @@
   transform: translate(1.1em, -3.6em);
 }
 
-.header .header-body > .text-white {
-  margin-bottom: 3em !important;
-  padding-bottom: 3em !important;
-}
-
 #book-list .table .img {
   border-radius: 5em;
   height: 5em;

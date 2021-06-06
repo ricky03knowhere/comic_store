@@ -1,14 +1,14 @@
 <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-  <div class="container-fluid">
+  <div class="container-fluid" id="admin-dashboard">
     <div class="header-body">
-      <a class="h4 text-white text-uppercase" href="{{ route('home') }}">
+      <a class="h4 text-white text-uppercase" href="{{ url('admin/home') }}">
         <i class="ni ni-tv-2 mr-2 mt--2"></i>
         Dashboard
       </a>
       <!-- Card stats -->
-      <div class="row mt-4">
-        <div class="col-6 mb-2 mb-xl-4">
-          <div class="card card-stats mb-4 mb-xl-0">
+      <div class="row mt-6">
+        <div class="col-lg-6 mb-3 mb-xl-6">
+          <div class="card card-stats card-lift--hover mb-4 mb-xl-0">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -28,8 +28,8 @@
             </div>
           </div>
         </div>
-        <div class="col-6 mb-2 mb-xl-4">
-          <div class="card card-stats mb-4 mb-xl-0">
+        <div class="col-lg-6 mb-3 mb-xl-6">
+          <div class="card card-stats card-lift--hover mb-4 mb-xl-0">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -49,8 +49,8 @@
             </div>
           </div>
         </div>
-        <div class="col-6 mb-2 mb-xl-4">
-          <div class="card card-stats mb-4 mb-xl-0">
+        <div class="col-lg-6 mb-3 mb-xl-6">
+          <div class="card card-stats card-lift--hover mb-4 mb-xl-0">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -70,8 +70,8 @@
             </div>
           </div>
         </div>
-        <div class="col-6 mb-2 mb-xl-4">
-          <div class="card card-stats mb-4 mb-xl-0">
+        <div class="col-lg-6 mb-3 mb-xl-6">
+          <div class="card card-stats card-lift--hover mb-4 mb-xl-0">
             <div class="card-body">
               <div class="row">
                 <div class="col">
@@ -85,7 +85,7 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
-                <span class="text-primary mr-2">  3 Administrators </span> |
+                <span class="text-primary mr-2"> 3 Administrators </span> |
                 <span class="text-warning mr-2"> 112 Customers</span>
               </p>
             </div>

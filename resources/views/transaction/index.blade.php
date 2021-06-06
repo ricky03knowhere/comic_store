@@ -17,7 +17,6 @@
 
         <div class="card-body py-5 px-3">
 
-
           <div class="table-responsive">
 
             <table class="table table-bordered table-hover my-3" id="dataTable">

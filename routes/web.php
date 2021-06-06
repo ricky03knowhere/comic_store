@@ -52,9 +52,14 @@ Route::get('/transactions/details/{id}', [TransactionController::class, 'show'])
 Route::get('/transactions/edit/{id}', [TransactionController::class, 'edit']) ->name('transactions');
 Route::post('/transactions/update/{id}', [TransactionController::class, 'update']) ->name('transactions');
 
-
 //User Pages
-Route::get('/users/list', [ProfileController::class, 'users_list'])->name('users');
+Route::get('/users/list', [UsersController::class, 'index'])->name('users');
+Route::get('/users/history/{id}', [UsersController::class, 'history'])->name('users');
+Route::get('/users/details/{id}', [UsersController::class, 'show'])->name('users');
+Route::delete('/users/delete/{id}', [UsersController::class, 'destroy'])->name('users');
+
+
+//User Guest Pages
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('update');
 Route::get('/profile/details', [ProfileController::class, 'index'])->name('profile');
 Route::get('/profile/edit', [UsersController::class, 'edit'])->name('profile');

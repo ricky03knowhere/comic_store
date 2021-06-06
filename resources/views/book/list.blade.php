@@ -38,21 +38,24 @@
                   <th>Action</th>
                 </tr>
               </thead>
-              <tbody class="align-items-center text-center">
+              <tbody>
                 @php $i = 1 @endphp
                 @foreach ($books as $book)
                 <tr>
-                  <td class="align-middle">{{ $i++ }}</td>
-                  <td class="align-middle">
-                    <div class="img">
+                  <td>{{ $i++ }}</td>
+                  <td>
+                    <div class="img align-items-center">
                       <img src="{{ asset('assets') }}/img/books/{{ $book ->picture }}" alt="404" id="img">
                     </div>
                   </td>
-                  <td class="align-middle">{{ $book -> title }}</td>
-                  <td class="align-middle">{{ $book -> stock }}</td>
-                  <td class="align-middle">
+                  <td>{{ $book -> title }}</td>
+                  <td>{{ $book -> stock }}</td>
+                  <td>
                     <a href="{{ url('book/detail', $book ->id) }}" class="btn btn-primary btn-sm info">
                       <i class="fa fa-info-circle"></i></a>
+
+                    <a href="{{ url('book/edit', $book ->id) }}" class="btn btn-success btn-sm info">
+                      <i class="fa fa-edit"></i></a>
 
                     <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..."
                       data-form="delete-form">
