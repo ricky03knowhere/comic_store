@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\Detail_order;
 use Auth;
 use Hash;
 
@@ -23,24 +25,24 @@ class UsersController extends Controller
     
   }
 
-  /**
-  * Show the form for creating a new resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
-  public function create() {
-    //
-  }
+  // /**
+  // * Show the form for creating a new resource.
+  // *
+  // * @return \Illuminate\Http\Response
+  // */
+  // public function create() {
+  //   //
+  // }
 
-  /**
-  * Store a newly created resource in storage.
-  *
-  * @param  \Illuminate\Http\Request  $request
-  * @return \Illuminate\Http\Response
-  */
-  public function store(Request $request) {
-    //
-  }
+  // /**
+  // * Store a newly created resource in storage.
+  // *
+  // * @param  \Illuminate\Http\Request  $request
+  // * @return \Illuminate\Http\Response
+  // */
+  // public function store(Request $request) {
+  //   //
+  // }
 
   /**
   * Display the specified resource.
@@ -103,6 +105,25 @@ class UsersController extends Controller
     return redirect('user/profile')-> with('notif', 'Your profile has been updated...');;
   }
 
+
+  public function history($id) {
+
+    $user = User::where('id', $id) ->first();
+    
+    $orders = Order::where('user_id', $id)
+    ->where('status', '!=', 0) ->get();
+   
+   $total_item = [];
+   foreach ($orders as $order) {
+    $count = Detail_order::where('order_id', $order ->id) -> sum('quantity');
+    
+    array_push($total_item, $count);
+   }
+   
+    return view('user/history', compact('orders', 'total_item', 'user'));
+  }
+
+  
   /**
   * Remove the specified resource from storage.
   *
@@ -110,6 +131,8 @@ class UsersController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function destroy($id) {
-    //
+    User::destroy($id);
+
+    return redirect('users/list') ->with('notif', 'User data deleted successfully');
   }
 }
