@@ -24,21 +24,23 @@
 
 
         <div class="card-body py-5 px-3">
- 
-        <div class="alert alert-success" role="alert">
-          <span class="alert-icon"><i class="fa fa-info-circle mr-2"></i> Success!</span>
-          <span class="alert-text">Your orders have been confirmed,
-            please complete the payment with a nominal value of
-            <b>Rp. {{ number_format($order ->total_price + $order ->payment_id) }}</b>
-            to account number <b>38-2918-1018</b> in the name of <b>Annie Leonhart</b></span>
-        </div>
 
-        <span class="badge badge-pill bg-yellow mb-3">
-          <i class="ni ni-calendar-grid-58 mr-2"></i>
-          Order Date : {{ $order ->date }}
-        </span>
-      
-      
+          @if($order ->status != 1)
+          <div class="alert alert-success" role="alert">
+            <span class="alert-icon"><i class="fa fa-info-circle mr-2"></i> Success!</span>
+            <span class="alert-text">Your orders have been confirmed,
+              please complete the payment with a nominal value of
+              <b>Rp. {{ number_format($order ->total_price + $order ->payment_id) }}</b>
+              to account number <b>38-2918-1018</b> in the name of <b>Annie Leonhart</b></span>
+          </div>
+          @endif
+
+          <span class="badge badge-pill bg-yellow mb-4" style="font-size: 0.8rem; text-transform: capitalize">
+            <b><i class="ni ni-calendar-grid-58 mr-2"></i>
+              Order Date : {{ $order ->date }}</b>
+          </span>
+
+
           <table class="table table-bordered table-hover">
             <thead class="bg-primary text-white text-center">
 
