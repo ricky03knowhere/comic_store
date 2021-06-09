@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Edit Profile')])
 
 @section('content')
-@include('users.partials.header', [
+@include('profile.partials.header', [
 'title' => __('Hello, ') . ' '. auth()->user()->name,
 'class' => 'col-lg-7'
 ])
@@ -46,13 +46,13 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label class="form-control-label" for="phone">Telephone</label> <input id="phone" type="number"
-                    class="form-control form-control-alternative" name="phone" value="{{ $user ->phone }}">
+                    class="form-control form-control-alternative" name="phone" value="{{ $user ->phone }}" required>
                 </div>
               </div>
               <div class="form-group">
-                <labeldo class="form-control-label" for="address">Address</label> <textarea id="address"
-                    class="form-control form-control-alternative" name="address"
-                    rows="3"> {{ $user ->address }} </textarea>
+                <label class="form-control-label" for="address">Address</label>
+                <textarea id="address" class="form-control form-control-alternative" name="address" rows="3"
+                  required>{{ $user ->address }}</textarea>
               </div>
               <div class="row">
                 <div class="col-md-6">

@@ -42,11 +42,14 @@ class ProfileController extends Controller
     
     $user = auth()-> user();
     $old_pict = $user ->picture;
-// dd($old_pict);
     $picture = $request ->picture;
+  
+    $picture_save = $old_pict;
+    // dump($picture_save);
 
-    $picture_save = '';
+    // $picture_save = '';
 
+    
     if ($picture) {
       if ($old_pict == null) {
         $picture_name = date('Ymd').rand(100, 99999).'.'.$picture ->getClientOriginalExtension();
@@ -55,10 +58,10 @@ class ProfileController extends Controller
       } else {
         $picture_save = $old_pict;
       }
+      // dd($picture_save);
 
       $picture ->move(public_path().'\\assets\\img\\users\\', $picture_save);
     }
-
 
 
 
@@ -76,7 +79,7 @@ class ProfileController extends Controller
     $user ->update();
 
 
-    return redirect('profile/details')-> with('notif', 'Your profile has been updated...');;
+    return redirect('profile/details') -> with('notif', 'Your profile has been updated...');;
 
     // auth()->user()->update($request->all());
 
@@ -96,6 +99,6 @@ class ProfileController extends Controller
 
     auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 
-    return back()->withPasswordStatus(__('Password successfully updated.'));
+    return redirect('profile/details') ->with('notif', 'Password successfully updated.');
   }
 }

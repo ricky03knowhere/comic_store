@@ -173,16 +173,6 @@
   position: relative;
   top: 1.6em;
 }
-#order .synopsis {
-  padding: 2em 5em;
-}
-#order .synopsis h4 {
-  margin-bottom: 1.5em;
-}
-#order .synopsis span {
-  text-indent: 1;
-  text-align: justify;
-}
 
 #toggle-paid .toggle.ios, #toggle-paid .toggle-on.ios, #toggle-paid .toggle-off.ios, #toggle-paid .toggle.ios .toggle-handle {
   border-radius: 20rem;

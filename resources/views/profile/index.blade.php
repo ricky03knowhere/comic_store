@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Profile')])
 
 @section('content')
-@include('users.partials.header', [
+@include('profile.partials.header', [
 'title' => __('Hello,') . ' '. auth()->user()->name,
 'class' => 'col-lg-7'
 ])
@@ -31,7 +31,7 @@
             @endif
           </button>
 
-          <h1 class="text-capitalized font-weight-800 mb-4">
+          <h1 class="text-capitalize font-weight-800 mb-4">
             {{ auth()->user()->name }}
           </h1>
           <div class="h4 font-weight-300">

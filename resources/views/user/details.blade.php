@@ -23,7 +23,7 @@
             @endif
           </button> -->
 
-          <h1 class="text-capitalized font-weight-800 mb-4">
+          <h1 class="text-capitalize font-weight-800 mb-4">
             {{ $user ->name }}
           </h1>
           <div class="h4 font-weight-300">
