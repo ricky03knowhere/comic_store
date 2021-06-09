@@ -33,12 +33,12 @@
                 <tr class="text-muted">
                   <td class="text-center"><i class="ni ni-single-02 mr-2"></i></td>
                   <td class="align-top">Author</td>
-                  <td><span class="px-3">:</span> {{ $book -> author }}</td>
+                  <td><span class="px-3">:</span>{{ $book -> author }}</td>
                 </tr>
                 <tr class="text-orange h4" style="height: 2.5em;">
                   <td class="text-center"><i class="ni ni-books mr-2"></i></td>
                   <td>Stock</td>
-                  <td><span class="px-3">:</span> {{ $book -> stock }} pcs</td>
+                  <td><span class="px-3">:</span>{{ $book -> stock }} pcs</td>
                 </tr>
                 <tr class="text-green h4">
                   <td class="text-center"><i class="fas fa-dollar-sign  mr-2"></i></td>

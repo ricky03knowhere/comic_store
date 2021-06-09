@@ -30,7 +30,7 @@
 
           <div class="table-responsive">
 
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover my-3" id="dataTable">
               <thead class="bg-primary text-white text-center">
 
                 <th>No.</th>
@@ -60,7 +60,7 @@
 
                   </th>
                   <td>
-                    <a href="{{ url('history', [$order ->id]) }}" class="btn btn-info btn-sm">
+                    <a href="{{ url('transactions/details', [$order ->id]) }}" class="btn btn-info btn-sm">
                       <i class="fas fa-info-circle"></i> Details
                     </a>
                   </td>

@@ -30,13 +30,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
-//Book Pages
+//Comic Pages
 Route::get('/store', [BooksController::class, 'index'])->name('comic');
 Route::post('/comic/save', [BooksController::class, 'store'])->name('comic');
 Route::get('/comic/detail/{id}', [BooksController::class, 'show'])->name('comic');
 Route::get('/comic/edit/{id}', [BooksController::class, 'edit'])->name('comic');
 Route::delete('/comic/delete/{id}', [BooksController::class, 'destroy'])->name('comic');
-Route::post('/comic/update/{comic}', [BooksController::class, 'update'])->name('comic');
+Route::post('/comic/update/{id}', [BooksController::class, 'update'])->name('comic');
 
 
 //Order Pages

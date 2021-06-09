@@ -5,7 +5,7 @@ use App\Models\Detail_order;
 $orders = Order::where('user_id', auth() ->user() ->id)
 ->where('status', '==', 0) ->get();
 
-$cart = [0];
+$cart = [];
 foreach ($orders as $order) {
 $count = Detail_order::where('order_id', $order ->id) -> sum('quantity');
 
@@ -19,7 +19,6 @@ array_push($cart, $count);
     <!-- Brand -->
     <a class="h4 mb-0 text-white text-uppercase ml--3" href="{{ route('home') }}">
     </a>
-
     <!-- Form -->
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex text-right" id="topbar">
@@ -28,9 +27,14 @@ array_push($cart, $count);
         <a class="nav-link nav-link-icon" href="{{ url('checkout') }}" role="button" aria-haspopup="true"
           aria-expanded="false">
           <i class="ni ni-cart"></i>
-          @if($cart[0] != 0)
-          <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif">$cart[0]</span>
+
+          @if($cart != [])
+          <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif">
+            {{ $cart[0] }}
+          </span>
           @endif
+
+
         </a>
       </li>
       @endif

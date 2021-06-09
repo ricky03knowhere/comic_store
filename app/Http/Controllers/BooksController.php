@@ -62,7 +62,7 @@ class BooksController extends Controller
 
     $book ->save();
 
-    return redirect('book/list') ->with('notif', 'Book data added successfully');
+    return redirect('comic/list') ->with('notif', 'Book data added successfully');
   }
 
   /**
@@ -97,11 +97,11 @@ class BooksController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, Book $book) {
+  public function update(Request $request, $id) {
 
-    $get_book = Book::where('id', $book ->id) ->first();
+    $get_book = Book::where('id', $id) ->first();
 
-    dd($book);
+    // dd($get_book);
     $old_pict = $get_book ->picture;
     $new_pict = $request ->picture;
 
@@ -118,7 +118,7 @@ class BooksController extends Controller
       'picture' => $old_pict
     ]);
 
-    return redirect('book/detail/'.$book ->id) ->with('notif', 'Book data updated successfully');
+    return redirect('comic/detail/'.$id) ->with('notif', 'Book data updated successfully');
   }
 
   /**
@@ -130,6 +130,6 @@ class BooksController extends Controller
   public function destroy($id) {
     Book::destroy($id);
 
-    return redirect('book/list') ->with('notif', 'Book data deleted successfully');
+    return redirect('comic/list') ->with('notif', 'Book data deleted successfully');
   }
 }

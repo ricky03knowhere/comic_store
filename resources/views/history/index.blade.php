@@ -29,7 +29,7 @@
 
           <div class="table-responsive">
 
-            <table class="table table-bordered table-hover">
+            <table class="table table-bordered table-hover my-3" id="dataTable">
               <thead class="bg-primary text-white text-center">
 
                 <th>No.</th>

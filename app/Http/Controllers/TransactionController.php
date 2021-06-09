@@ -14,6 +14,7 @@ class TransactionController extends Controller
 
     $orders = DB::table('users')
     ->join('orders', 'users.id', 'orders.user_id')
+    ->where('orders.status', '!=', 0)
     ->select('orders.id', 'orders.date', 'users.email', 'orders.total_price', 'orders.status')
     -> get();
 
@@ -45,7 +46,7 @@ class TransactionController extends Controller
       public function update($id){
         $order = Order::where('id', $id) ->first();
         
-        $status = (($order -> status) == 1) ? 0 : 1;
+        $status = (($order -> status) == 1) ? 2 : 1;
         $order -> status = $status;
 
         $order ->update();
