@@ -14,7 +14,7 @@ class HistoryController extends Controller
     }
   
     public function index() {
-      $orders = Order::where('user_id', Auth::user() ->id)
+      $orders = Order::where('user_id', auth() ->user() ->id)
       ->where('status', '!=', 0) ->get();
      
      $total_item = [];

@@ -58,7 +58,8 @@
 
 
         <div class="text-center">
-          <a href="{{ url('book/edit', $book ->id) }}" class="btn btn-primary my-4"><i class="fas fa-edit mr-2"></i>Edit</a>
+          <a href="{{ url('comic/edit', $book ->id) }}" class="btn btn-primary my-4"><i
+              class="fas fa-edit mr-2"></i>Edit</a>
           <button onclick="window.history.back()" class="btn btn-white ml-auto">Back</button>
         </div>
       </div>

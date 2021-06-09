@@ -100,6 +100,8 @@ class BooksController extends Controller
   public function update(Request $request, Book $book) {
 
     $get_book = Book::where('id', $book ->id) ->first();
+
+    dd($book);
     $old_pict = $get_book ->picture;
     $new_pict = $request ->picture;
 

@@ -59,7 +59,7 @@ class LoginController extends Controller
 
       } else {
 
-        return redirect('book/index') ->with('notif', 'Login Success..');
+        return redirect('store') ->with('notif', 'Login Success..');
 
       }
 
@@ -72,6 +72,3 @@ class LoginController extends Controller
   }
 
 }
-
-
-

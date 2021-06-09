@@ -73,17 +73,22 @@
       <!-- Navigation -->
       <ul class="navbar-nav" id="sidebar-desk">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('home') }}">
+          <a class="nav-link" href="{{ url('home') }}">
             <i class="ni ni-tv-2 text-info"></i> {{ __('Dashboard') }}
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('profile.edit') }}">
+          <a class="nav-link" href="{{ url('store/') }}">
+            <i class="ni ni-shop" style="color: #e861ff"></i>Store
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('checkout') }}">
             <i class="ni ni-cart text-green"></i>My Cart
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('user.index') }}">
+          <a class="nav-link" href="{{ url('history') }}">
             <i class="fas fa-history text-yellow"></i>Orders History
           </a>
         </li>

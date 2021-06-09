@@ -51,7 +51,7 @@ class OrdersController extends Controller
     if (($request ->quantity > $book ->stock)) {
 
       return redirect('order/'.$id) ->with('alert-notif', 'Your order is out of stock');
-    } else if ($request -> quantity == 0) {
+    } else if ($request -> quantity <= 0) {
 
       return redirect('order/'.$id) ->with('alert-notif', 'The order cannot be null');
     }
@@ -171,6 +171,8 @@ class OrdersController extends Controller
     } else if (empty($user ->phone)) {
       return redirect('profile/edit') ->with('alert-notif', 'Please complete your identity first..');
     } else {
+      
+      $order ->status = 2;
       
       $order ->update();
 

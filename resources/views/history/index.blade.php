@@ -26,7 +26,7 @@
         </div>
 
         <div class="card-body py-5 px-3">
-     
+
           <div class="table-responsive">
 
             <table class="table table-bordered table-hover">
@@ -73,7 +73,7 @@
 
 
         <div class="text-center mb-3">
-          <a href="{{ url('book') }}" class="btn btn-white ml-auto"><i class="ni ni-shop mr-2"></i>Back to Store</a>
+          <a href="{{ url('store') }}" class="btn btn-white ml-auto"><i class="ni ni-shop mr-2"></i>Back to Store</a>
         </div>
       </div>
 
@@ -86,7 +86,8 @@
           No Histories yet...
 
         </span>
-        <a href="{{ url('book') }}" class="btn btn-success btn-sm float-right"><i class="fa fa-shopping-cart mr-1"></i>Order Now</a>
+        <a href="{{ url('store') }}" class="btn btn-success btn-sm float-right"><i
+            class="fa fa-shopping-cart mr-1"></i>Order Now</a>
       </div>
 
     </div>

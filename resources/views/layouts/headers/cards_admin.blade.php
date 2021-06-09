@@ -3,7 +3,7 @@
     <div class="header-body">
       <a class="h4 text-white text-uppercase" href="{{ url('admin/home') }}">
         <i class="ni ni-tv-2 mr-2 mt--2"></i>
-        Dashboard
+        Admin Dashboard
       </a>
       <!-- Card stats -->
       <div class="row mt-6">

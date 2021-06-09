@@ -51,16 +51,16 @@
                   <td class="align-middle">{{ $book -> title }}</td>
                   <td class="align-middle">{{ $book -> stock }}</td>
                   <td class="align-middle">
-                    <a href="{{ url('book/detail', $book ->id) }}" class="btn btn-primary btn-sm info">
+                    <a href="{{ url('comic/detail', $book ->id) }}" class="btn btn-primary btn-sm info">
                       <i class="fa fa-info-circle"></i></a>
 
-                    <a href="{{ url('book/edit', $book ->id) }}" class="btn btn-success btn-sm info">
+                    <a href="{{ url('comic/edit', $book ->id) }}" class="btn btn-success btn-sm info">
                       <i class="fa fa-edit"></i></a>
 
                     <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..."
                       data-form="delete-form">
                       <i class="fa fa-trash-alt"></i></a>
-                    <form action="{{ url('book/delete', $book ->id) }}" id="delete-form" method="post">
+                    <form action="{{ url('comic/delete', $book ->id) }}" id="delete-form" method="post">
                       @method('delete')
                       @csrf
                     </form>
@@ -86,7 +86,7 @@
               <h3>Add New Book Form</h3>
             </div>
             <div class="card-body px-md-4 px-lg-5 py-lg-5">
-              <form role="form" action="{{ url('book/save') }}" method="post" enctype="multipart/form-data">
+              <form role="form" action="{{ url('comic/save') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                   <div class="col-md-6">

@@ -31,12 +31,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 //Book Pages
-Route::get('/book', [BooksController::class, 'index'])->name('book');
-Route::post('/book/save', [BooksController::class, 'store'])->name('book');
-Route::get('/book/detail/{id}', [BooksController::class, 'show'])->name('book');
-Route::get('/book/edit/{id}', [BooksController::class, 'edit'])->name('book');
-Route::delete('/book/delete/{id}', [BooksController::class, 'destroy'])->name('book');
-Route::post('/book/update/{book}', [BooksController::class, 'update'])->name('book');
+Route::get('/store', [BooksController::class, 'index'])->name('comic');
+Route::post('/comic/save', [BooksController::class, 'store'])->name('comic');
+Route::get('/comic/detail/{id}', [BooksController::class, 'show'])->name('comic');
+Route::get('/comic/edit/{id}', [BooksController::class, 'edit'])->name('comic');
+Route::delete('/comic/delete/{id}', [BooksController::class, 'destroy'])->name('comic');
+Route::post('/comic/update/{comic}', [BooksController::class, 'update'])->name('comic');
 
 
 //Order Pages
@@ -69,7 +69,7 @@ Route::get('/history', [HistoryController::class, 'index'])->name('history');
 Route::get('/history/{id}', [HistoryController::class, 'details'])->name('history');
 
 //Admin Page
-Route::get('/book/list', [BooksController::class, 'bookList'])->name('book');
+Route::get('/comics/list', [BooksController::class, 'bookList'])->name('comic');
 
 
 Route::group(['middleware' => 'auth'], function () {

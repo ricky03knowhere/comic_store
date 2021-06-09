@@ -71,7 +71,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('book/') }}">
+          <a class="nav-link" href="{{ url('store/') }}">
             <i class="ni ni-shop" style="color: #e861ff"></i>Store
           </a>
         </li>
@@ -81,7 +81,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('book/list') }}">
+          <a class="nav-link" href="{{ url('comics/list') }}">
             <i class="ni ni-book-bookmark text-info"></i>Comics Collection
           </a>
         </li>
