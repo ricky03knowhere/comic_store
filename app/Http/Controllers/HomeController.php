@@ -20,9 +20,9 @@ class HomeController extends Controller
      * @return \Illuminate\View\View
      */
     public function index() {
-        return view('dashboard');
-    }
-    public function adminHome() {
-        return view('admin/adminHome');
+        
+        $dashboard =  (auth() ->user() ->id) ? 'admin/adminHome' : 'dashboard';
+        
+        return view($dashboard);
     }
 }

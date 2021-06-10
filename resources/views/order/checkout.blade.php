@@ -50,9 +50,9 @@
                 <th>Action</th>
               </thead>
               <tbody>
+
                 <?php
                 $i = 1;
-                $order_item = true;
                 ?>
                 @foreach($detail_order as $order)
                 <tr>
@@ -62,25 +62,25 @@
                   <td class="align-middle">{{ $order -> quantity }}</td>
                   <td class="align-middle">Rp. {{ number_format($order -> total_price) }}</td>
                   <td class="align-middle">
-                    <form action="{{ url('checkout/remove',[$order -> id]) }}" method="post" id="remove-order">
+                    <form action="{{ url('checkout/remove',[$order -> id]) }}" method="post"
+                      id="remove-order-{{ $order -> id }}">
                       @csrf
                       {{ method_field('DELETE') }}
                       <button class="btn btn-danger btn-sm delete-order warn-notif" data-msg="remove this order..?"
-                        data-form="remove-order">
+                        data-form="remove-order-{{ $order -> id }}">
                         <i class="fas fa-trash mr-1"></i>Remove</button>
 
                     </form>
                   </td>
                 </tr>
                 @endforeach
-                @if(($no_items == null) || ($no_items -> total_price == 0))
                 <tr>
-                  <th colspan="4">Total Pay</th>
+                  <th></th>
+                  <th colspan="3">Total Pay</th>
                   <th>
                     Rp. {{ number_format($order -> order -> total_price) }}
                   </th>
                 </tr>
-                @endif
               </tbody>
             </table>
           </div>
@@ -103,9 +103,10 @@
       @endif
 
       <div
-        class="alert bg-gradient-warning mt-4 {{ (($no_items == null) || ($no_items -> total_price == 0)) ? ' d-block' : ' d-none' }}">
-        <h3 class="text-white"><i class="fa fa-exclamation-triangle mr-1"></i>Oops...</h3>
-        <span class="text-dark">
+        class="alert bg-gradient-warning mt-4 {{ (($no_items == null) || ($no_items -> total_price == 0)) ? ' d-block' : ' d-none' }}"
+        id="empty-cart">
+        <h3 class="text-white font-weight-600"><i class="fa fa-exclamation-triangle mr-1"></i>Oops...</h3>
+        <span class="text-dark font-weight-bold">
           No Orders yet...
 
         </span>

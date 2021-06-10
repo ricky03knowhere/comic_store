@@ -2,15 +2,10 @@
 use App\Models\Order;
 use App\Models\Detail_order;
 
-$orders = Order::where('user_id', auth() ->user() ->id)
-->where('status', '==', 0) ->get();
+$order = Order::where('user_id', auth() ->user() ->id)
+->where('status', '==', 0) ->first();
 
-$cart = [];
-foreach ($orders as $order) {
-$count = Detail_order::where('order_id', $order ->id) -> sum('quantity');
-
-array_push($cart, $count);
-}
+$cart = Detail_order::where('order_id', $order ->id) ->sum('quantity');
 
 @endphp
 <!-- Top navbar -->
@@ -28,9 +23,9 @@ array_push($cart, $count);
           aria-expanded="false">
           <i class="ni ni-cart"></i>
 
-          @if($cart != [])
+          @if(($cart != null) && ($cart != 0))
           <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif">
-            {{ $cart[0] }}
+            {{ $cart }}
           </span>
           @endif
 

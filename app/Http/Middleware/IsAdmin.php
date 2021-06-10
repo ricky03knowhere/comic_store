@@ -21,7 +21,7 @@ class IsAdmin
 
     }
 
-    return redirect('home')->with('error', "You don't have admin access.");
+    return redirect('home') ->with('notif', "You don't have admin access.");
 
   }
 }

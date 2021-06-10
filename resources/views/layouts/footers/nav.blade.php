@@ -3,7 +3,8 @@
     <div class="copyright text-center text-muted">
       Copyright &copy; {{ now()->year }} by <a href="https://ricky03knowhere.github.io" class="font-weight-bold ml-1"
         target="_blank">ricky_ackerman</a> &amp;
-      Templates by <a href="https://www.updivision.com" class="font-weight-bold ml-1" target="_blank">Argon Dashboard
+      Templates by <a href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html"
+        class="font-weight-bold ml-1" target="_blank">Argon Dashboard
         Admin</a>
     </div>
   </div>

@@ -29,7 +29,7 @@
 
           <div class="table-responsive">
 
-            <table class="table table-bordered table-hover my-3" id="dataTable">
+            <table class="table table-bordered table-hover my-5" id="dataTable">
               <thead class="bg-primary text-white text-center">
 
                 <th>No.</th>
@@ -39,7 +39,7 @@
                 <th>Status</th>
                 <th>Action</th>
               </thead>
-              <tbody>
+              <tbody class="text-center">
                 <?php
                 $i = 1;
                 ?>
@@ -48,7 +48,7 @@
                   <td>{{ $i++ }}</td>
                   <td>{{ $order -> date }}</td>
                   <td>{{ $total_item[($i-2)] }}</td>
-                  <td>Rp. {{ number_format($order -> total_price) }}</td>
+                  <td>Rp. {{ number_format($order -> total_price + $order ->payment_id) }}</td>
                   <th>
 
                     @if($order ->status == 1)

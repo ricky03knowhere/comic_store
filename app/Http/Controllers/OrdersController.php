@@ -137,6 +137,8 @@ class OrdersController extends Controller
       $detail_order = Detail_order::where('order_id', $order ->id) ->get();
 
     }
+
+
     return view('order/checkout', compact('order', 'detail_order'));
 
   }
