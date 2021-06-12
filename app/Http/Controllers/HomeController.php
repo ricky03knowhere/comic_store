@@ -43,11 +43,18 @@ class HomeController extends Controller
         
         $order = $user_order ->where('status', '==', 0) ->first();
         
-        $get_order = Detail_order::where('order_id', $order ->id) ->first();
-        $get_count = Detail_order::where('order_id', $order ->id) ->get();
+        $cart = 0;
+        $total_pay = 0;
         
-        $cart = $get_count ->sum('quantity');
-        $total_pay = $get_order -> order ->total_price;
+        if($order != null){
+          
+          $get_order = Detail_order::where('order_id', $order ->id) ->first();
+          $get_count = Detail_order::where('order_id', $order ->id) ->get();
+          
+          $cart = $get_count ->sum('quantity');
+          $total_pay = $get_order -> order ->total_price;
+        }
+        
 
 
         $get_user_order_id = Order::where('user_id',  $user -> id) ->where('status', '!=', 0);

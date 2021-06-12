@@ -2,10 +2,15 @@
 use App\Models\Order;
 use App\Models\Detail_order;
 
+$cart = 0;
+
 $order = Order::where('user_id', auth() ->user() ->id)
 ->where('status', '==', 0) ->first();
 
+if($order != null){
 $cart = Detail_order::where('order_id', $order ->id) ->sum('quantity');
+
+}
 
 @endphp
 <!-- Top navbar -->
