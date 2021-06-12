@@ -62,7 +62,7 @@ class BooksController extends Controller
 
     $book ->save();
 
-    return redirect('comic/list') ->with('notif', 'Book data added successfully');
+    return redirect('comics/list') ->with('notif', 'Book data added successfully');
   }
 
   /**
@@ -130,6 +130,6 @@ class BooksController extends Controller
   public function destroy($id) {
     Book::destroy($id);
 
-    return redirect('comic/list') ->with('notif', 'Book data deleted successfully');
+    return redirect('comics/list') ->with('notif', 'Book data deleted successfully');
   }
 }

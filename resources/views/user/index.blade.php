@@ -54,9 +54,11 @@
                         <i class="fa fa-info-circle"></i></a>
 
                       <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this user data..."
-                        data-form="delete-form">
+                        data-form="delete-form-{{ $user ->id }}">
+
                         <i class="fa fa-trash-alt"></i></a>
-                      <form action="{{ url('user/delete', $user ->id) }}" id="delete-form" method="post">
+                      <form action="{{ url('user/delete', $user ->id) }}" id="delete-form-{{ $user ->id }}"
+                        method="post">
                         @method('delete')
                         @csrf
                       </form>

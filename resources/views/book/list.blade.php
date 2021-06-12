@@ -58,9 +58,10 @@
                       <i class="fa fa-edit"></i></a>
 
                     <a href="#!" class="btn btn-danger btn-sm delete warn-notif" data-msg="delete this book data..."
-                      data-form="delete-form">
+                      data-form="delete-form-{{ $book ->id }}">
                       <i class="fa fa-trash-alt"></i></a>
-                    <form action="{{ url('comic/delete', $book ->id) }}" id="delete-form" method="post">
+                    <form action="{{ url('comic/delete', $book ->id) }}" id="delete-form-{{ $book ->id }}"
+                      method="post">
                       @method('delete')
                       @csrf
                     </form>
