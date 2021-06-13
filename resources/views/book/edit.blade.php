@@ -107,8 +107,10 @@
             </div>
 
             <div class="text-center">
-              <button type="submit" class="btn btn-primary my-4">Save</button>
-              <button onclick="window.history.back()" class="btn btn-white ml-auto">Back</button>
+              <button type="submit" class="btn btn-primary my-4">
+                <i class="fas fa-save mr-2"></i>Save</button>
+              <a href="{{ url('comics/list') }}" class="btn btn-white ml-auto">
+                <i class="fas fa-backward mr-2"></i>Back</a>
             </div>
           </form>
         </div>

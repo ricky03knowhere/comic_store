@@ -68,7 +68,8 @@
 
 
         <div class=" text-center mb-3">
-          <a href="{{ url('transactions/list') }}" class="btn btn-white">Back</a>
+          <a href="{{ url('transactions/list') }}" class="btn btn-white">
+            <i class="fas fa-backward mr-2"></i>Back</a>
         </div>
       </div>
 

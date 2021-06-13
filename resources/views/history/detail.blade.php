@@ -103,7 +103,7 @@
 
 
         <div class="text-center mb-3">
-          <a href="{{ url('book') }}" class="btn btn-white ml-auto"><i class="ni ni-shop mr-2"></i>Back to Store</a>
+          <a href="{{ url('store') }}" class="btn btn-white ml-auto"><i class="ni ni-shop mr-2"></i>Back to Store</a>
         </div>
       </div>
 

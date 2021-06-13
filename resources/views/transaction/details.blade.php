@@ -100,7 +100,8 @@
 
 
         <div class="text-center mb-3">
-          <button onclick="window.history.back()" class="btn btn-white">Back</button>
+          <a href="{{ url('transactions/list') }}" class="btn btn-white ml-auto">
+            <i class="fas fa-backward mr-2"></i>Back</a>
         </div>
       </div>
 

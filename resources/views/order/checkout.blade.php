@@ -94,7 +94,8 @@
               <i class="fa fa-cart-arrow-down mr-2"></i>Checkout</button>
 
 
-            <button onclick="window.history.back()" class="btn btn-white">Back</button>
+            <button onclick="window.history.back()" class="btn btn-white">
+              <i class="fas fa-backward mr-2"></i>Back</button>
           </div>
         </div>
       </div>
