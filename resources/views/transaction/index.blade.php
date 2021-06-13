@@ -27,6 +27,7 @@
                   <th>Date</th>
                   <th>Email</th>
                   <th>Nominal</th>
+                  <th>Payment ID</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -39,6 +40,7 @@
                   <td class="align-middle">{{ $order -> date }}</td>
                   <td class="align-middle">{{ $order -> email }}</td>
                   <td class="align-middle">Rp. {{ number_format($order -> total_price) }}</td>
+                  <td class="align-middle">Rp. {{ $order -> payment_id }}</td>
 
                   <td class="align-middle">
 

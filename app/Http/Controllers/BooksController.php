@@ -25,7 +25,7 @@ class BooksController extends Controller
   }
 
   public function bookList() {
-    $books = Book::paginate(20);
+    $books = Book::all() ->sortByDesc('created_at');
     return view('book/list', compact('books'));
   }
 

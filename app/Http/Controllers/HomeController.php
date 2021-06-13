@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB; 
 
+use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Book;
 use App\Models\Order;
 use App\Models\Detail_order;
 
@@ -30,8 +33,7 @@ class HomeController extends Controller
 
         $user = auth() ->user();
         
-        $dashboard =  (($user ->status) == 1) ? 'admin/home' : 'home';
-
+        $dashboard =  (($user ->is_admin) == 1) ? 'admin/home' : 'home';
 
         return redirect($dashboard);
     }
@@ -70,21 +72,49 @@ class HomeController extends Controller
         }
         
         $books_count = array_sum($books);
-     
-      //   dump($cart);
-      // dump($total_pay);
-      
-      // dump($history_count);
-      
-      // dump($history_paid);
-      // dd($books_count);
 
         return view('dashboard', compact('cart', 'total_pay', 'history_count', 'history_paid', 'books_count'));
       }
     
       public function admin() {
-    
-        return view('admin/adminHome');
-    
+        
+        // $timestamp = ; 
+        
+        $current = Carbon::today() ->toDateTimeString();
+        $last_moth = Carbon::now() ->subMonth() ->toDateTimeString();
+        // $last_day = date("Y-m-d", (idate('U') - 86400));
+        
+        
+        // dump($current -> toDateTimeString());
+        // dd($current);
+      
+        
+        $today_income = Order::where('date', $current) ->where('status', 1) ->get() ->sum('total_price');
+        $today_trades = Order::where('date', $current) ->where('status', 1) ->get() ->count();
+        
+        $sold_books = Detail_order::all() ->sum('quantity');
+        $sold_title = Detail_order::distinct() ->count('book_id');
+        
+        $books_collection = Book::all() ->count();
+        $books_new_added = Book::where('created_at', '>=', $last_moth) ->get() ->count();
+        
+        $users = User::all() ->count();
+        
+        $admin = User::where('is_admin', 1) ->count();
+        $customer = User::where('is_admin',  null) ->count();
+        // // dump($today_income);
+        // // dump($today_trades);
+        
+        // // dump($sold_books);
+        // // dump($sold_title);
+        
+        // dump($user_list);
+        // dump($admin);
+        // dd($customer);
+        
+        $variables = ['today_income', 'today_trades', 'sold_books', 'sold_title', 
+                    'books_collection', 'books_new_added', 'users', 'admin', 'customer'];
+        
+        return view('admin/adminHome', compact($variables));
       }
 }

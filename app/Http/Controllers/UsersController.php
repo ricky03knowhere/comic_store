@@ -19,7 +19,7 @@ class UsersController extends Controller
   */
   public function index() {
 
-      $users = User::all();
+      $users = User::all() ->sortByDesc('created_at');
   
       return view('user.index', compact('users'));
     
@@ -111,7 +111,7 @@ class UsersController extends Controller
     $user = User::where('id', $id) ->first();
     
     $orders = Order::where('user_id', $id)
-    ->where('status', '!=', 0) ->get();
+    ->where('status', '!=', 0) ->get() ->sortByDesc('date');
    
    $total_item = [];
    foreach ($orders as $order) {

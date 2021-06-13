@@ -31,7 +31,7 @@ Auth::routes();
 //Base Pages
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'customer'])->name('home');
-Route::get('admin/home', [HomeController::class, 'admin'])->name('admin.home') ->middleware('is_admin');
+Route::get('/admin/home', [HomeController::class, 'admin'])->name('admin.home') ->middleware('is_admin');
 
 //Comic Pages
 Route::get('/store', [BooksController::class, 'index'])->name('comic');

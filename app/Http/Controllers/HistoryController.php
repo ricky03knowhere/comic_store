@@ -15,7 +15,7 @@ class HistoryController extends Controller
   
     public function index() {
       $orders = Order::where('user_id', auth() ->user() ->id)
-      ->where('status', '!=', 0) ->get();
+      ->where('status', '!=', 0) ->get() ->sortByDesc('created_at');
      
      $total_item = [];
      foreach ($orders as $order) {
