@@ -29,6 +29,7 @@
                   <th>Picture</th>
                   <th>Email</th>
                   <th>Name</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -44,6 +45,15 @@
                   </td>
                   <td class="align-middle">{{ $user -> email }}</td>
                   <td class="align-middle">{{ $user -> name }}</td>
+
+                  <td class="align-middle">
+                    @if($user ->is_admin == 1)
+                    <span class="badge badge-pill badge-primary">Administrator</span>
+                    @else
+                    <span class="badge badge-pill badge-success">Customer</span>
+                    @endif
+
+                  </td>
 
                   <td class="align-middle">
                     <div class="text-justify">

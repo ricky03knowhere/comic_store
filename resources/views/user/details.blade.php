@@ -15,13 +15,13 @@
           </div>
         </div>
         <div class="card-body pt-0 pt-md-4 mt-4">
-          <!-- <button href="#!" class="btn btn-sm badge-pill btn-primary d-flex mx-auto mt-lg--4 mb-5">
-            @if($user ->is_admin == 1)
-            Administrator
-            @else
-            Customer
-            @endif
-          </button> -->
+          @if($user ->is_admin == 1)
+          <button href="#!"
+            class="btn btn-sm badge-pill btn-primary d-flex mx-auto mt-lg--4 mb-5">Administrator</button>
+          @else
+          <button href="#!" class="btn btn-sm badge-pill btn-success d-flex mx-auto mt-lg--4 mb-5">Customer</button>
+          @endif
+
 
           <h1 class="text-capitalize font-weight-800 mb-4">
             {{ $user ->name }}
