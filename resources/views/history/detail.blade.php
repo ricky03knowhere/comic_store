@@ -35,70 +35,76 @@
           </div>
           @endif
 
-          <span class="badge badge-pill bg-yellow mb-4" style="font-size: 0.8rem; text-transform: capitalize">
+          <span class="badge badge-pill bg-yellow mb-4" style="font-size: 0.8rem; text-transform: capitalize;">
             <b><i class="ni ni-calendar-grid-58 mr-2"></i>
               Order Date : {{ $order ->date }}</b>
           </span>
 
+          <a href="{{ url('history/print', $order ->id) }}" target="_blank"
+            class="badge badge-pill bg-purple float-right"
+            style="color: #e9ecef; font-size: 0.8rem; text-transform: capitalize;">
+            <i class="fa fa-print mr-2"></i> Print</a>
+          <div class="table-responsive">
+            <table class="table table-bordered table-hover">
+              <thead class="bg-primary text-white text-center">
 
-          <table class="table table-bordered table-hover">
-            <thead class="bg-primary text-white text-center">
+                <th>No.</th>
+                <th>Title</th>
 
-              <th>No.</th>
-              <th>Title</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Total Price</th>
-            </thead>
-            <tbody>
-              <?php
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+              </thead>
+              <tbody>
+                <?php
               $i = 1;
               ?>
-              @foreach($detail_orders as $detail_order)
-              <tr>
-                <td>{{ $i++ }}</td>
-                <td>{{ $detail_order -> book -> title }}</td>
-                <td>Rp. {{ number_format($detail_order -> book -> price) }}</td>
-                <td>{{ $detail_order -> quantity }}</td>
-                <td>Rp. {{ number_format($detail_order -> total_price) }}</td>
-              </tr>
-              @endforeach
-              <tr>
-                <td></td>
-                <th colspan="3">Total Books Price</th>
-                <td>
-                  Rp. {{ number_format($order ->total_price) }}
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <th colspan="3">Payment ID</th>
-                <td>
-                  Rp. {{ number_format($order ->payment_id) }}
-                </td>
-              </tr>
-              <tr>
-                <td></td>
-                <th colspan="3">Total Pay</th>
-                <th>
-                  Rp. {{ number_format($order ->total_price + $order ->payment_id) }}
-                </th>
-              </tr>
-              <tr>
-                <td></td>
-                <th colspan="3">Status</th>
-                <th>
-                  @if($order ->status == 1)
-                  <span class="badge badge-pill badge-success"><i class="fa fa-check-circle mr-1"></i> Paid</span>
-                  @else
-                  <span class="badge badge-pill badge-danger"><i class="fa fa-close-circle mr-1"></i> Unpaid</span>
-                  @endif
+                @foreach($detail_orders as $detail_order)
+                <tr>
+                  <td>{{ $i++ }}</td>
+                  <td>{{ $detail_order -> book -> title }}</td>
+                  <td>Rp. {{ number_format($detail_order -> book -> price) }}</td>
+                  <td>{{ $detail_order -> quantity }}</td>
+                  <td>Rp. {{ number_format($detail_order -> total_price) }}</td>
+                </tr>
+                @endforeach
+                <tr>
+                  <td></td>
+                  <th colspan="3">Total Books Price</th>
+                  <td>
+                    Rp. {{ number_format($order ->total_price) }}
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <th colspan="3">Payment ID</th>
+                  <td>
+                    Rp. {{ number_format($order ->payment_id) }}
+                  </td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <th colspan="3">Total Pay</th>
+                  <th>
+                    Rp. {{ number_format($order ->total_price + $order ->payment_id) }}
+                  </th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <th colspan="3">Status</th>
+                  <th>
+                    @if($order ->status == 1)
+                    <span class="badge badge-pill badge-success"><i class="fa fa-check-circle mr-1"></i> Paid</span>
+                    @else
+                    <span class="badge badge-pill badge-danger"><i class="fa fa-close-circle mr-1"></i> Unpaid</span>
+                    @endif
 
-                </th>
-              </tr>
-            </tbody>
-          </table>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
 
+          </div>
         </div>
 
 

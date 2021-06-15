@@ -77,17 +77,10 @@ class HomeController extends Controller
       }
     
       public function admin() {
-        
-        // $timestamp = ; 
-        
+ 
         $current = Carbon::today() ->toDateTimeString();
         $last_moth = Carbon::now() ->subMonth() ->toDateTimeString();
-        // $last_day = date("Y-m-d", (idate('U') - 86400));
-        
-        
-        // dump($current -> toDateTimeString());
-        // dd($current);
-      
+  
         
         $today_income = Order::where('date', $current) ->where('status', 1) ->get() ->sum('total_price');
         $today_trades = Order::where('date', $current) ->where('status', 1) ->get() ->count();
@@ -102,15 +95,7 @@ class HomeController extends Controller
         
         $admin = User::where('is_admin', 1) ->count();
         $customer = User::where('is_admin',  null) ->count();
-        // // dump($today_income);
-        // // dump($today_trades);
-        
-        // // dump($sold_books);
-        // // dump($sold_title);
-        
-        // dump($user_list);
-        // dump($admin);
-        // dd($customer);
+
         
         $variables = ['today_income', 'today_trades', 'sold_books', 'sold_title', 
                     'books_collection', 'books_new_added', 'users', 'admin', 'customer'];

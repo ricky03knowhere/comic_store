@@ -8,6 +8,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\ExportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +69,7 @@ Route::get('/profile/edit', [UsersController::class, 'edit'])->name('profile');
 
 //History Pages
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
+Route::get('/history/print/{id}', [ExportController::class, 'index'])-> name('print');
 Route::get('/history/{id}', [HistoryController::class, 'details'])->name('history');
 
 //Admin Page
