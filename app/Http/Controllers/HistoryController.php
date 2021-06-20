@@ -33,6 +33,6 @@ class HistoryController extends Controller
       $order = Order::where('id', $id) ->first();
       
       
-      return view('history/detail', compact('detail_orders', 'order'));
+      return view('history/details', compact('detail_orders', 'order'));
     }
 }

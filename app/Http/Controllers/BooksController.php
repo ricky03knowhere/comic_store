@@ -46,6 +46,12 @@ class BooksController extends Controller
   */
   public function store(Request $request) {
 
+    
+    $request->validate([
+      'picture' => 'required|image|mimes:jpeg,png,jpg|max:1048',
+  ]);
+
+    
     $picture = $request -> picture;
     $picture_name = date('Ymd').rand(100, 99999).'.'.$picture ->getClientOriginalExtension();
 

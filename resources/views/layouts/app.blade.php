@@ -9,10 +9,10 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>
-    {{ config('app.name', 'Argon Dashboard') }}
+    {{ config('app.name', 'Comic Store') }}
   </title>
   <!-- Favicon -->
-  <link href="{{ asset('argon') }}/img/brand/favicon.png" rel="icon" type="image/png">
+  <link href="{{ asset('argon') }}/img/brand/brand.webp" rel="icon" type="image/png">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Extra details for Live View on GitHub Pages -->

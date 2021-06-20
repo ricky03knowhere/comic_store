@@ -29,7 +29,7 @@ $cart = Detail_order::where('order_id', $order ->id) ->sum('quantity');
           <i class="ni ni-cart"></i>
 
           @if(($cart != null) && ($cart != 0))
-          <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif">
+          <span class="badge badge-circle badge-sm bg-success text-default mt--5 notif font-weight-900">
             {{ $cart }}
           </span>
           @endif

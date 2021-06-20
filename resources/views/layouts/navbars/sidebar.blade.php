@@ -1,3 +1,19 @@
+@php
+use App\Models\Order;
+use App\Models\Detail_order;
+
+$cart = 0;
+
+$order = Order::where('user_id', auth() ->user() ->id)
+->where('status', '==', 0) ->first();
+
+if($order != null){
+$cart = Detail_order::where('order_id', $order ->id) ->sum('quantity');
+
+}
+
+@endphp
+
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-default sticky-top" id="sidenav-main">
   <div class="container-fluid">
     <!-- Toggler -->
@@ -6,16 +22,26 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Brand -->
-    <a class="navbar-brand pt-0" href="{{ route('home') }}">
-      <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+    <a class="navbar-brand pt-md-4" href="{{ url('/') }}">
+      <img src="{{ asset('argon') }}/img/brand/brand.webp"
+        class="navbar-brand-img mb-4 d-none d-lg-block d-xl-block d-md-block m-auto" alt="..."
+        style="transform: scale(1.7)">
+      <h2 class="text-primary font-weight-900 mt-md-4">Comic Store</h2>
+
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none" id="user-nav">
       <li class="nav-item">
-        <a class="nav-link nav-link-icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">
+        <a class="nav-link nav-link-icon" href="{{ url('checkout') }}">
           <i class="ni ni-cart"></i>
-          <span class="cart-notif bg-success">7</span>
+
+          @if(($cart != null) && ($cart != 0))
+          <span class="badge badge-circle badge-sm bg-success text-default font-weight-900"
+            style="transform: scale(.75) translate(-30%, -80%); font-size: 1em">
+            {{ $cart }}
+          </span>
+          @endif
+
         </a>
       </li>
       <li class="nav-item dropdown">
@@ -51,13 +77,16 @@
       </li>
     </ul>
     <!-- Collapse -->
-    <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse mt-md--4" id="sidenav-collapse-main">
       <!-- Collapse header -->
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a href="{{ route('home') }}">
-              <img src="{{ asset('argon') }}/img/brand/blue.png">
+            <a class="navbar-brand pt-md-4 d-flex" href="{{ url('/') }}">
+              <img src="{{ asset('argon') }}/img/brand/brand.webp" class="navbar-brand-img mr-3" alt="..."
+                style="transform: scale(1.3)">
+              <h2 class="text-primary font-weight-900 mt-md-4">Comic Store</h2>
+
             </a>
           </div>
           <div class="col-6 collapse-close">

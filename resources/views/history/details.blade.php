@@ -41,9 +41,12 @@
           </span>
 
           <a href="{{ url('history/print', $order ->id) }}" target="_blank"
-            class="badge badge-pill bg-purple float-right"
+            class="badge badge-pill bg-purple ml-3 {{ ($order ->status == 1) ? '' : 'd-none' }}"
             style="color: #e9ecef; font-size: 0.8rem; text-transform: capitalize;">
-            <i class="fa fa-print mr-2"></i> Print</a>
+            <i class="fa fa-print mr-2"></i>Print
+          </a>
+
+
           <div class="table-responsive">
             <table class="table table-bordered table-hover">
               <thead class="bg-primary text-white text-center">

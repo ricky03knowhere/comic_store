@@ -6,8 +6,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Brand -->
-    <a class="navbar-brand pt-0" href="{{ url('/') }}">
-      <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+    <a class="navbar-brand pt-md-4" href="{{ url('/') }}">
+      <img src="{{ asset('argon') }}/img/brand/brand.webp"
+        class="navbar-brand-img mb-4 d-none d-lg-block d-xl-block d-md-block m-auto" alt="..."
+        style="transform: scale(1.7)">
+      <h2 class="text-primary font-weight-900 mt-md-4">Comic Store</h2>
+
     </a>
     <!-- User -->
     <ul class="nav align-items-center d-md-none" id="user-nav">
@@ -44,13 +48,16 @@
       </li>
     </ul>
     <!-- Collapse -->
-    <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+    <div class="collapse navbar-collapse mt-md--4" id="sidenav-collapse-main">
       <!-- Collapse header -->
       <div class="navbar-collapse-header d-md-none">
         <div class="row">
           <div class="col-6 collapse-brand">
-            <a href="{{ url('admin/home') }}">
-              <img src="{{ asset('argon') }}/img/brand/blue.png">
+            <a class="navbar-brand pt-md-4 d-flex" href="{{ url('/') }}">
+              <img src="{{ asset('argon') }}/img/brand/brand.webp" class="navbar-brand-img mr-3" alt="..."
+                style="transform: scale(1.3)">
+              <h2 class="text-primary font-weight-900 mt-md-4">Comic Store</h2>
+
             </a>
           </div>
           <div class="col-6 collapse-close">
