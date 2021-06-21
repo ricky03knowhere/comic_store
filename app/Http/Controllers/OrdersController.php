@@ -208,6 +208,13 @@ class OrdersController extends Controller
     $order ->update();
     $detail_order ->delete();
 
+    $detail_order_check = Detail_order::where('order_id',  $detail_order ->order_id) ->first();
+    
+    
+    if ($detail_order_check == null) {
+      $order ->delete();
+    }
+
     return redirect('checkout') ->with('notif', 'Order has been removed');
 
   }

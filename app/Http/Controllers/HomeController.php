@@ -47,9 +47,10 @@ class HomeController extends Controller
         
         $cart = 0;
         $total_pay = 0;
-    
-        if($order){
-          
+            
+
+        if($order != null){
+   
           // $get_order =first();
           $get_count = Detail_order::where('order_id', $order ->id) ->get();
           
