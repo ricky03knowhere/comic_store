@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Detail_order;
 use Auth;
 use Hash;
+use File;
 
 class UsersController extends Controller
 {
@@ -76,6 +77,11 @@ class UsersController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function update(Request $request) {
+    
+    $request->validate([
+      'picture' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+    ]);
+    
     $user = User::where('id', Auth::user() -> id) ->first();
 
 
@@ -131,6 +137,9 @@ class UsersController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function destroy($id) {
+   
+    $picture = User::where('id', $id) ->first() ->picture;
+    File::delete(public_path('assets/img/users/'.$picture));
     User::destroy($id);
 
     return redirect('users/list') ->with('notif', 'User data deleted successfully');

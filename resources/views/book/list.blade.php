@@ -7,6 +7,9 @@
 <div id="notif" data-notif="{{ session('notif') }}"></div>
 @endif
 
+{!!$errors ->first('picture', '<div id="alert-notif" data-notif=":message"></div>')!!}
+
+
 <div class="container-fluid mt--6">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-11">
@@ -18,6 +21,8 @@
             <i class="ni ni-book-bookmark mx-2"></i> Comics Collection
           </h2>
         </div>
+
+
 
         <button type="button" class="btn btn-primary mt-4 btn-add badge-pill d-flex float-right" data-toggle="modal"
           data-target="#modal-form"><i class="fas fa-plus mr-2"></i>Add Comic</button>

@@ -24,7 +24,9 @@ class ProfileController extends Controller
  
   
   public function edit() {
-    return view('profile.edit');
+    $user = auth() ->user();
+
+    return view('profile/edit', compact('user'));
   }
 
   /**
@@ -35,6 +37,9 @@ class ProfileController extends Controller
   */
   public function update(Request $request) {
 
+    $request->validate([
+      'picture' => 'image|mimes:jpeg,png,jpg|max:1024',
+    ]);
 
     if (auth()->user()->id == 1) {
       return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);

@@ -10,6 +10,8 @@
 <div id="alert-notif" data-notif="{{ session('alert-notif') }}"></div>
 @endif
 
+{!!$errors ->first('picture', '<div id="alert-notif" data-notif=":message"></div>')!!}
+
 
 <div class="container-fluid mt--7">
   <div class="row justify-content-center">

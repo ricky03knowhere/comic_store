@@ -33,7 +33,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Books Sold</h5>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Comics Sold</h5>
                   <span class="h2 font-weight-bold mb-0">{{ $sold_title }} titles</span>
                 </div>
                 <div class="col-auto">
@@ -44,7 +44,7 @@
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
                 <span class="text-success mr-2"> {{ $sold_title }} pcs</span>
-                <span class="text-nowrap">Purchased books</span>
+                <span class="text-nowrap">Purchased comics</span>
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@
             <div class="card-body">
               <div class="row">
                 <div class="col">
-                  <h5 class="card-title text-uppercase text-muted mb-0">Books Collection</h5>
+                  <h5 class="card-title text-uppercase text-muted mb-0">Comics Collection</h5>
                   <span class="h2 font-weight-bold mb-0">{{ $books_collection }} Titles</span>
                 </div>
                 <div class="col-auto">

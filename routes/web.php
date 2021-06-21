@@ -65,7 +65,7 @@ Route::delete('/user/delete/{id}', [UsersController::class, 'destroy'])->name('u
 //User Guest Pages
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('update');
 Route::get('/profile/details', [ProfileController::class, 'index'])->name('profile');
-Route::get('/profile/edit', [UsersController::class, 'edit'])->name('profile');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile');
 
 //History Pages
 Route::get('/history', [HistoryController::class, 'index'])->name('history');
