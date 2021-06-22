@@ -15,7 +15,7 @@
         <div class="card-header bg-white border-0">
           <h2 class="pt-1">
             <i class="ni ni-collection mx-2"></i> {{ $book -> title }} /
-            <i class="fa fa-shopping-cart mx-2"></i> Order
+            <i class="fa fa-shopping-cart mx-2"></i> Details
           </h2>
         </div>
 

@@ -9,7 +9,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>
-    {{ config('app.name', 'Comic Store') }}
+    Comic Store
   </title>
   <!-- Favicon -->
   <link href="{{ asset('argon') }}/img/brand/brand.webp" rel="icon" type="image/png">
@@ -42,7 +42,6 @@
   <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
     rel="stylesheet" />
 
-  <title>Document</title>
 </head>
 
 <body class="{{ $class ?? '' }}">
