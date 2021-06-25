@@ -26,7 +26,7 @@ class CreateComicsSeeder extends Seeder
           ];
 
           foreach ($comics as $key => $value) {
-              Books::create($value);
+              Book::create($value);
           }
           
     }
