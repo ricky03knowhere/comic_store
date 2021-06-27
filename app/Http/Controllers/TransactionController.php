@@ -25,11 +25,12 @@ class TransactionController extends Controller
       $detail_orders = Detail_order::where('order_id', $id) ->get();
     
       $order =  DB::table('orders') ->where('orders.id', $id)
-      ->join('users', 'users.id', 'orders.user_id')
+      ->join('users', 'orders.user_id', 'users.id')
       ->first();
       
+      $order_id = $id;
       
-      return view('transaction.details', compact('detail_orders', 'order'));
+      return view('transaction.details', compact('detail_orders', 'order', 'order_id'));
     }
 
       public function edit($id){

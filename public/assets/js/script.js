@@ -36,3 +36,21 @@ $(document).ready(function() {
   })
 
 })
+
+//Picture Upload Preview
+function picture_preview(){
+    
+  const selector = document.querySelector('#pictureSelector')
+  const label = document.querySelector('.picture-label')
+  const picture = document.querySelector('.picture-preview')
+
+  label.textContent = selector.files[0].name
+  
+  const picture_file = new FileReader()
+  
+  picture_file.readAsDataURL(selector.files[0])
+  
+  picture_file.onload = (e) => {
+    picture.src = e.target.result
+  }
+}

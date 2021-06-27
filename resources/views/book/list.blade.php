@@ -160,12 +160,14 @@
                       <span class="input-group-text"><i class="ni ni-collection"></i></span>
                     </div>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture"
-                        required>
-                      <label class="custom-file-label" for="customFileLang">Select cover picture</label>
+                      <input type="file" class="custom-file-input" id="pictureSelector" lang="en" name="picture"
+                        required onchange="picture_preview()">
+                      <label class="custom-file-label picture-label" for="customFileLang">Select cover picture</label>
                     </div>
                   </div>
                 </div>
+
+                <img src="#" alt="comic_cover" class="img-thumbnail rounded picture-preview" width="150px">
 
 
                 <div class="text-center">

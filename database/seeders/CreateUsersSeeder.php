@@ -23,7 +23,7 @@ class CreateUsersSeeder extends Seeder
       [
         'name' => 'User',
         'email' => 'user@gmail.com',
-        'is_admin' => '0',
+        'is_admin' => NULL,
         'password' => bcrypt('87654321'),
       ],
         ['name' => 'Historia','email' => 'historia@gmail.com','email_verified_at' => NULL,'password' => '$2y$10$Vgr6/YGdgEoIYd4qp1Mg6eEG4KVVmyCam7HcptVT.mfB84CJZqzRW','is_admin' => NULL,'address' => NULL,'phone' => NULL,'picture' => 'default.png','remember_token' => NULL,'created_at' => '2021-03-25 01:21:22','updated_at' => '2021-03-25 01:21:22'],

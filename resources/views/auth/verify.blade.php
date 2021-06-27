@@ -64,7 +64,7 @@
                 </div>
                 @endif
 
-                {{ __('Before proceeding, please check your email for a verification link.') }}
+                {{ __('Before proceeding, please check your email for a verification link, check spam email if it\'s not in your inbox.') }}
 
                 @if (Route::has('verification.resend'))
                 {{ __('If you did not receive the email') }}, <a
