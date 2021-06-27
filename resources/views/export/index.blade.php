@@ -12,6 +12,9 @@ use Carbon\Carbon;
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Favicon -->
+  <link href="{{ asset('argon') }}/img/brand/brand.webp" rel="icon" type="image/png">
+
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,8 +32,7 @@ use Carbon\Carbon;
   <div class="pb-5 mb-5 mx-5">
     <div class="row mb-4">
       <div class="col-4">
-        <img src="https://class.buildwithangga.com/themes/front/images/logo_bwa_new.svg" class="mb-3" height="60"
-          alt="logo buildwith angga">
+        <img src="{{ asset('argon') }}/img/brand/brand.webp" class="mb-3" height="60" alt="brand_logo">
         <h3 class="mb-0">Comic Store</h3>
 
       </div>
@@ -56,13 +58,13 @@ use Carbon\Carbon;
           <strong>Comic Store</strong>
         </p>
         <p class="mb-0">
-          comic000store@gmail.com
+          comi000store@gmail.com
         </p>
         <p class="mb-0">
           0896-0453-5310 (Annie Leonhart)
         </p>
         <p class="mb-0">
-          www.comic_store.heroku.com
+          www.comic--store.herokuapp.com
         </p>
       </div>
       <div class="col-6 text-right">
