@@ -108,7 +108,7 @@ class BooksController extends Controller
   public function update(Request $request, $id) {
 
     $request->validate([
-      'picture' => 'required|image|mimes:jpeg,png,jpg|max:1024',
+      'picture' => 'image|mimes:jpeg,png,jpg|max:1024',
     ]);
     
     $get_book = Book::where('id', $id) ->first();
