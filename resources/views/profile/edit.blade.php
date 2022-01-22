@@ -58,19 +58,22 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <img src="{{ asset('assets') }}/img/users/{{ $user ->picture }}" alt="" class="img-thumbnail rounded"
-                    width="150px">
+                  <img src="{{ asset('assets') }}/img/users/{{ $user ->picture }}" alt="user_pict"
+                    class="img-thumbnail rounded picture-preview" width="150px">
                 </div>
                 <div class="col-md-6">
                   <div class="form-group mb-3">
                     <lable class="form-control-label">Picture</lable>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture"> <label
-                        class="custom-file-label" for="customFileLang">Select picture</label>
+                      <input type="file" class="custom-file-input" id="pictureSelector" lang="en" name="picture"
+                        onchange="picture_preview()">
+                      <label class="custom-file-label  picture-label" for="customFileLang">Select
+                        picture</label>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div class="text-center">
                 <button type="submit" class="btn btn-default mt-4">{{ __('Save') }}</button>
               </div>

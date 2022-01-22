@@ -35,7 +35,7 @@
               Order Date : {{ $order ->date }}</b>
           </span>
 
-          <a href="{{ url('history/print', $order ->id) }}" target="_blank"
+          <a href="{{ url('history/print', $order_id) }}" target="_blank"
             class="badge badge-pill bg-purple ml-3 {{ ($order ->status == 1) ? '' : 'd-none' }}"
             style="color: #e9ecef; font-size: 0.8rem; text-transform: capitalize;">
             <i class="fa fa-print mr-2"></i>Print

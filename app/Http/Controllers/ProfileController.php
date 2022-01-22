@@ -56,16 +56,12 @@ class ProfileController extends Controller
 
     
     if ($picture) {
-      if ($old_pict == null) {
         $picture_name = date('Ymd').rand(100, 99999).'.'.$picture ->getClientOriginalExtension();
-        $picture_save = $picture_name;
-        
-      } else {
-        $picture_save = $old_pict;
-      }
-      // dd($picture_save);
+       
+        $picture_save = ($old_pict == 'default.png') ? $picture_name : $old_pict;
 
-      $picture ->move(public_path().'\\assets\\img\\users\\', $picture_save);
+      $picture ->move(public_path().'/assets/img/users/', $picture_save);
+
     }
 
 

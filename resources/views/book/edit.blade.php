@@ -3,6 +3,8 @@
 @section('content')
 @include('layouts.headers.header')
 
+{!!$errors ->first('picture', '<div id="alert-notif" data-notif=":message"></div>')!!}
+
 <div class="container-fluid mt--6">
   <div class="row justify-content-center">
     <div class="col-md-10 col-lg-11">
@@ -87,8 +89,8 @@
 
             <div class="row">
               <div class="col-md-6">
-                <img src="{{ asset('assets') }}/img/books/{{ $book ->picture }}" alt="" class="img-thumbnail rounded"
-                  width="150px">
+                <img src="{{ asset('assets') }}/img/books/{{ $book ->picture }}" alt=""
+                  class="img-thumbnail rounded picture-preview" width="150px">
               </div>
               <div class="col-md-6">
                 <div class="form-group mb-3">
@@ -98,8 +100,9 @@
                       <span class="input-group-text"><i class="ni ni-collection"></i></span>
                     </div>
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="customFileLang" lang="en" name="picture">
-                      <label class="custom-file-label" for="customFileLang">Select cover picture</label>
+                      <input type="file" class="custom-file-input" id="pictureSelector" lang="en" name="picture"
+                        onchange="picture_preview()">
+                      <label class="custom-file-label picture-label" for="customFileLang">Select cover picture</label>
                     </div>
                   </div>
                 </div>

@@ -5,7 +5,9 @@
 
   <div class="container-fluid d-flex align-items-center mb-6">
 
-    <h1 class="display-2 text-white " style="z-index: 99; text-shadow: 2px 2px 3px #0005"> {{ $title ?? '' }}</h1>
+    <h1 class="display-2 text-white text-capitalize" style="z-index: 99; text-shadow: 2px 2px 3px #0005">
+      {{ $title ?? '' }}
+    </h1>
     @if (isset($description) && $description)
     <p class=" text-white mt-0 mb-5">{{ $description }}</p>
     @endif
