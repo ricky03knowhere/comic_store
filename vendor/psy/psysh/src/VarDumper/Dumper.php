@@ -64,7 +64,7 @@ class Dumper extends CliDumper
         }
     }
 
-    protected function style($style, $value, $attr = [])
+    protected function style($style, $value, $attr = []): string
     {
         if ('ref' === $style) {
             $value = \strtr($value, '@', '#');
@@ -74,7 +74,7 @@ class Dumper extends CliDumper
         $map = self::$controlCharsMap;
         $cchr = $this->styles['cchr'];
 
-        $chunks = \preg_split(self::$controlCharsRx, $value, null, \PREG_SPLIT_NO_EMPTY | \PREG_SPLIT_DELIM_CAPTURE);
+        $chunks = \preg_split(self::$controlCharsRx, $value, -1, \PREG_SPLIT_NO_EMPTY | \PREG_SPLIT_DELIM_CAPTURE);
         foreach ($chunks as $chunk) {
             if (\preg_match(self::$onlyControlCharsRx, $chunk)) {
                 $chars = '';
